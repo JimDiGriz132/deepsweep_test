@@ -782,9 +782,21 @@ a.locationBtn {
 @media (max-width: 640px) {
 
 	body {
-    
     background-attachment: scroll !important;
-    background-size: cover; 
+    background-size: cover;
+  }
+
+  .floor, .group > div, .item, .progress-container {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .floor { background: var(--floor-bg) !important; }
+  .item { background: var(--card-bg) !important; }
+  .progress-container { background: rgba(18, 26, 29, 0.95) !important; }
+
+  [data-theme="museum-workshop"] .group > div { background: rgba(26, 15, 11, 0.95) !important; }
+  [data-theme="neon-toxic"] .group > div { background: rgba(13, 35, 21, 0.95) !important; }
 		
   .item > div {
     flex-direction: column;
