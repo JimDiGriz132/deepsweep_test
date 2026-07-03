@@ -1419,7 +1419,7 @@ if (fishContainer) {
 // --- Load JSON and build UI ---
 let state = loadState();
 
-fetch('/data.json')
+fetch('data.json')
   .then(res => res.json())
   .then(data => {
     buildUI(data);
@@ -1840,7 +1840,7 @@ document.getElementById('openUncheckedBtn').addEventListener('click', runMissing
 document.getElementById('locationFilter').addEventListener('change', refreshMissingItemsFilter);
 
 // ================= VERSION BADGE TOOLTIP =================
-fetch('/version.json')
+fetch('version.json')
   .then(res => res.json())
   .then(v => {
     const badge = document.getElementById('appVersion');
