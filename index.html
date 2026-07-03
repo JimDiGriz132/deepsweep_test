@@ -1382,7 +1382,7 @@ document.addEventListener('click', (e) => {
     installAlert.style.display = 'none';
   }
 });
-if ('serviceWorker' in navigator) {
+/*if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
     .then(reg => {
       console.log('Service Worker registered');
@@ -1390,7 +1390,7 @@ if ('serviceWorker' in navigator) {
     })
     .catch(err => console.log('SW registration failed', err));
 }
-
+*/
 // --- LocalStorage helpers ---
 function loadState(){ return JSON.parse(localStorage.getItem('deepsweepState')||'{}'); }
 function saveState(state){ localStorage.setItem('deepsweepState', JSON.stringify(state)); }
