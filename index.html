@@ -1,0 +1,2186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeepSweep</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#004080">
+<style>
+/* ===== SKINS ===== */
+:root, [data-theme="default"] {
+  --bg-gradient: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+  --main-accent: #00f2fe;
+  --target-color: #ffd700;
+  --floor-bg: linear-gradient(135deg, rgba(16, 33, 62, 0.8), rgba(15, 52, 96, 0.8));
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-hover: linear-gradient(135deg, rgba(25, 48, 88, 0.9), rgba(20, 65, 120, 0.9));
+  --text-color: #ffffff;
+  --btn-bg: linear-gradient(90deg, #4facfe, #00f2fe);
+  --btn-hover-bg: linear-gradient(90deg, #3a8eff, #00cfff);
+  --btn-text: #ffffff;
+}
+
+[data-theme="neon-toxic"] {
+  --bg-gradient: linear-gradient(135deg, #0d1b15 0%, #072213 100%),
+                  url('toxic_bcg.png');
+  --main-accent: #39ff14;
+  --target-color: #ff007f;
+  --floor-bg: linear-gradient(135deg, rgba(13, 35, 21, 0.8), rgba(7, 45, 23, 0.8));
+  --card-bg: rgba(57, 255, 20, 0.05);
+  --card-hover: linear-gradient(135deg, rgba(20, 55, 30, 0.9), rgba(15, 75, 35, 0.9));
+  --text-color: #e0ffe0;
+  --btn-bg: linear-gradient(90deg, #1b4d22, #39ff14);
+  --btn-hover-bg: linear-gradient(90deg, #246b2f, #54ff38);
+  --btn-text: #0d1b15;
+}
+/*
+[data-theme="aqua-marine"] {
+  --bg-gradient: linear-gradient(135deg, #001f3f 0%, #0074d9 100%);
+  --main-accent: #7fdbff;
+  --target-color: #ffdc00;
+  --floor-bg: linear-gradient(135deg, rgba(0, 31, 63, 0.8), rgba(0, 80, 150, 0.8));
+  --card-bg: rgba(255, 255, 255, 0.07);
+  --card-hover: linear-gradient(135deg, rgba(0, 50, 100, 0.9), rgba(0, 100, 180, 0.9));
+  --text-color: #ffffff;
+  --btn-bg: linear-gradient(90deg, #00509d, #7fdbff);
+  --btn-hover-bg: linear-gradient(90deg, #003f88, #a3e7ff);
+  --btn-text: #001f3f;
+}
+
+[data-theme="amish-wood"] {
+  --bg-gradient: linear-gradient(135deg, #2b1d12 0%, #4a3525 100%);
+  --main-accent: #d4a373;
+  --target-color: #ffb703;
+  --floor-bg: linear-gradient(135deg, rgba(50, 34, 22, 0.8), rgba(80, 55, 35, 0.8));
+  --card-bg: rgba(255, 255, 255, 0.04);
+  --card-hover: linear-gradient(135deg, rgba(74, 53, 37, 0.9), rgba(100, 75, 50, 0.9));
+  --text-color: #fefae0;
+  --btn-bg: linear-gradient(90deg, #5c4033, #d4a373);
+  --btn-hover-bg: linear-gradient(90deg, #4a3227, #e6b88a);
+  --btn-text: #2b1d12;
+}
+*/
+[data-theme="museum-workshop"] {
+  --bg-gradient: linear-gradient(135deg, rgba(46, 28, 22, 0.95) 0%, rgba(26, 15, 11, 0.95) 100%), 
+                 url('workshop_bcg.png');
+  --main-accent: #e5d3b3; 
+  --target-color: #8c3e2b; 
+  --floor-bg: linear-gradient(135deg, rgba(229, 211, 179, 0.15) 0%, rgba(210, 190, 155, 0.15) 100%);
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-hover: linear-gradient(135deg, rgba(140, 62, 43, 0.3) 0%, rgba(46, 28, 22, 0.5) 100%);
+  --text-color: #f7ebd3;
+  --btn-bg: linear-gradient(90deg, #5c2c20, #8c3e2b);
+  --btn-hover-bg: linear-gradient(90deg, #733728, #a64f3b);
+  --btn-text: #f7ebd3;
+}
+
+/* ===== GLOBAL ===== */
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg-gradient);
+  background-repeat: repeat; 
+  background-blend-mode: multiply; 
+  background-attachment: fixed;
+  margin: 0;
+  padding: 16px;
+  height: auto;
+  min-height: 50dvh;
+  color: var(--text-color);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* WELCOME OVERLAY */
+.welcome-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); 
+  backdrop-filter: blur(8px); 
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20000; /* Iznad svega */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.welcome-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.welcome-content {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 400px;
+  width: 85%;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.welcome-content h2 {
+  color: #00f2fe;
+  margin-top: 0;
+}
+
+.instructions {
+  text-align: left;
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+.instructions ul {
+  padding-left: 20px;
+}
+
+.instructions li {
+  margin-bottom: 10px;
+}
+
+.instructions strong {
+  color: #ffd700; /* Zlatna za upozorenja */
+}
+
+/* ===== NEW HEADER STYEL (FISHING BAR) ===== */
+.topBar {
+  position: relative;
+  margin-bottom: 10px;
+  z-index: 1000;
+}
+
+.header-main-content {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  position: relative;
+  overflow: visible;
+  padding: 0;
+}
+
+/* ROUND MENU BUTTON */
+.menu-btn {
+  width: 56px;
+  height: 56px;
+  background: #080c0d; 
+  border: 4px solid var(--main-accent);
+  box-shadow: 0 0 15px var(--main-accent);
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 21;
+}
+
+.menu-btn:active {
+  transform: scale(0.9);
+}
+
+.reel-dots {
+  width: 24px;
+  height: 24px;
+  border: 3px dotted var(--main-accent);
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.reel-dots::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: var(--main-accent);
+  box-shadow: 0 0 10px var(--main-accent);
+  border-radius: 50%;
+}
+
+.reel-container {
+  position: relative;
+  z-index: 20; 
+}
+
+/* Line container */
+.progress-container {
+  flex-grow: 1;
+  height: 16px; 
+  background: rgba(18, 26, 29, 0.9); 
+  backdrop-filter: blur(10px);
+  border: 10px solid rgba(255, 255, 255, 0.1);
+  border-left: none; 
+  
+  margin-left: -30px; 
+  padding-left: 15px; 
+  
+  border-radius: 0 10px 10px 0;
+  position: relative;
+  z-index: 10;
+  overflow: visible;
+}
+
+.fish-wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.4s ease-out;
+    pointer-events: auto; 
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.fish-icon-realistic {
+  width: 32px;
+  height: 32px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M2,12C2,12 5,7 11,7C15,7 19,10 19,10L22,8V16L19,14C19,14 15,17 11,17C5,17 2,12 2,12Z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 2;
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
+}
+
+.target-box {
+  position: absolute;
+  width: 44px;
+  height: 24px;
+  border: 2px solid #ffd700;
+  box-shadow: 0 0 8px #ffd700, inset 0 0 4px #ffd700;
+  border-radius: 12px;
+  z-index: 1;
+  animation: targetJitter 1.5s infinite ease-in-out;
+}
+
+@keyframes targetJitter {
+  0% { transform: translateX(0px); }
+  25% { transform: translateX(-3px) scale(1.02); } 
+  50% { transform: translateX(0px); } 
+  75% { transform: translateX(-2px) scale(0.98); } 
+  100% { transform: translateX(0px); }
+}
+
+/* Filling line (Teal-gradient-red) */
+.progress-fill {
+  width: 0%; 
+  height: 100%;
+  background: linear-gradient(90deg, 
+    #00f2fe 0%, 
+    #71ffaf 40%, 
+    #ffd700 75%, 
+    #ff4b2b 100%
+  );
+  background-size: calc(100vw - 80px);
+  background-position: left center;
+  background-repeat: no-repeat;
+  
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
+  transition: width 0.4s ease-out;
+}
+
+/* Fish icon */
+.fish-icon {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+  filter: drop-shadow(0 0 5px #00f2fe);
+}
+
+
+/* EXPORT IMPORT VERSION CONTAINER */
+.header-right-area {
+    position: absolute;
+    right: 15px;
+    top: -18px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    z-index: 1100;
+}
+
+/* Buttons with appversin stlye */
+.version-style-btn, #appVersion {
+    position: static !important;
+    font-size: 10px;
+    color: var(--btn-text) !important;
+    font-weight: bold;
+    background: var(--btn-bg) !important;
+    padding: 2px 6px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    white-space: nowrap;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.version-style-btn:hover {
+    background: rgba(255,255,255,0.8);
+    transform: scale(1.05);
+}
+
+.version-style-btn:active {
+    transform: scale(0.95);
+}
+
+/* App version */
+#appVersion {
+  position: static;
+  font-size: 10px;
+  color: #004080;
+  font-weight: bold;
+  background: rgba(255,255,255,0.5);
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+
+/* Dropdown */
+.menu-dropdown {
+  top: 60px;
+  left: 10px;
+}
+
+.right-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#appVersion:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
+}
+
+/* Search */
+.search-container {
+  margin: 10px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#itemSearch {
+  width: 90%;
+  max-width: 400px;
+  padding: 12px 15px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+#itemSearch:focus {
+  border-color: #00f2fe;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+}
+
+#itemSearch::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+}
+
+#itemSearch {
+  width: 100%;
+  padding: 12px 40px 12px 15px; 
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.clear-btn {
+  position: absolute;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 20px;
+  line-height: 1;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.2s;
+}
+
+.clear-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+
+/* Dropdown */
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 75px;
+  right: 16px;
+  background: var(--floor-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid var(--main-accent);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  z-index: 1000;
+  width: 260px; 
+  padding: 8px 0;
+  transition: all 0.3s ease;
+}
+
+.menu-dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-dropdown li {
+  list-style: none;
+  margin: 6px 12px;
+  padding: 0;
+}
+
+.menu-dropdown a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+
+
+
+
+/*.menu-dropdown a:hover {
+  background: #f0f4ff;
+}
+*/
+/* Button and links inside menu dropdown */
+.menu-dropdown a,
+.menu-dropdown a:hover,
+.menu-dropdown a:focus,
+.menu-dropdown a:visited {
+  color: white !important;
+  text-decoration: none !important;
+  
+}
+.menu-item-btn {
+  display: block !important; 
+  width: 100%;
+  margin: 0;
+  padding: 5px 0px;
+  gap: 10px; 
+  justify-content: flex-start;
+  background: var(--btn-bg) !important; 
+  color: var(--btn-text) !important; 
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center; 
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(79, 172, 254, 0.4);
+  
+  border: none;
+  outline: none;
+  cursor: pointer;
+  
+  transition: all 0.25s ease;
+  
+  /* Reset */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Prisilno prebrisavanje boje za linkove unutar izbornika */
+#menuDropdown .menu-item-btn a,
+.menu-dropdown .menu-item-btn a,
+#menuDropdown .menu-item-btn *,
+.menu-dropdown .menu-item-btn * {
+  color: var(--btn-text) !important;
+  text-decoration: none !important;
+  fill: var(--btn-text) !important;
+}
+
+/* Hover */
+.menu-item-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(79, 172, 254, 0.55);
+  background: var(--btn-hover-bg) !important;
+}
+
+/* Active */
+.menu-item-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.menu-dropdown li {
+padding: 0 12px;
+  margin: 4px 0;
+  width: 100%;
+  box-sizing: border-box;
+
+}
+
+/* Popup style */
+.fish-popup {
+  position: absolute;
+  bottom: 40px; /* Pozicija iznad ribe */
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: #ffd700; /* Žuta boja kao meta */
+  color: #000;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 13px;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 200;
+}
+
+.fish-popup::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #ffd700 transparent transparent transparent;
+}
+
+/* Hover (PC) & active class (Mobile) */
+.fish-wrapper:hover .fish-popup {
+    opacity: 1 !important;
+    transform: translateX(-50%) translateY(0) !important;
+}
+.fish-wrapper.active .fish-popup {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ===== COUNTER ===== */
+#counter {
+  text-align: center;
+  font-size: 1.3em;
+  color: #004080;
+  font-weight: 600;
+  margin: 20px auto;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  max-width: 320px;
+  width: 90%;
+}
+
+/* ===== LIST – reset default browser style ===== */
+#container,
+#container ul,
+#container li {
+  padding: 0;
+  list-style: none;
+}
+
+/* ===== FLOORS, GROUPS, ITEMS ===== */
+.floor, .group > div, .item {
+  background: var(--card-bg) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.floor:hover, .item:hover {
+  background: var(--card-hover) !important;
+  box-shadow: 0 0 20px var(--main-accent);
+}
+
+.floor-name, .group-name, .item-name {
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Floor */
+.floor {
+  background: var(--floor-bg) !important;
+  border-left: 5px solid var(--main-accent);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.floor > div {
+  padding: 10px 10px;
+}
+
+/* Group */
+.group {
+  margin: 8px 0 8px 20px;
+  width: calc(100% - 40px);
+}
+
+/* Group wrapper */
+.group > div {
+  
+  background: rgba(255, 255, 255, 0.07) !important; 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin: 6px 0;
+  margin-left: 5px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: all 0.2s ease;
+}
+
+.group > div:hover {
+  
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(0, 242, 254, 0.3);
+}
+
+/* Item */
+.item {
+  margin: 6px 0 6px 40px;
+  padding: 0;
+}
+
+/* Item wrapper */
+.item > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+  width: calc(100% - 40px);
+  margin-left: 5px;
+  padding: 6px 4px 6px 4px;
+}
+
+/* 1st row: checkbox + pic */
+.item .first-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Name */
+.item label {
+  flex: 1;
+  min-width: 0;
+  font-weight: 600;
+  font-size: 1.05em;
+  color: #ffffff;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: normal;
+}
+
+/* Location btn  */
+a.locationBtn {
+  background: var(--btn-bg) !important;
+  color: var(--btn-text) !important; 
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-weight: 600;
+  box-shadow: 0 3px 12px rgba(102, 126, 234, 0.3);
+  transition: all 0.2s;
+  white-space: nowrap;
+  text-align: center;
+  min-width: 140px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+#openUncheckedBtn, #locationFilter {
+  background: var(--btn-bg) !important;
+  border: 1px solid var(--main-accent);
+  color: var(--btn-text) !important;
+  backdrop-filter: blur(5px);
+  border-radius: 8px;
+  padding: 8px 15px;
+  font-weight: 600;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: all 0.25s ease;
+}
+
+#openUncheckedBtn:hover {
+  background: var(--btn-hover-bg) !important;
+  box-shadow: 0 0 15px var(--main-accent);
+}
+
+#locationFilter {
+  padding: 8px 30px 8px 12px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+  cursor: pointer;
+}
+
+/* Stil za opcije unutar dropdowna da prate trenutni card-bg ili floor-bg */
+#locationFilter option {
+  background-color: #121212; /* Neutralna tamna pozadina za bolji kontrast na mobilnim sustavima */
+  color: #ffffff;
+  padding: 10px;
+}
+
+
+/* Phone */
+@media (max-width: 640px) {
+  .item > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+	justify-content: center; 
+    min-height: 100px;
+	padding: 6px 4px 6px 4px;
+  }
+
+  .item label {
+    margin-left: 32px;
+    width: 100%;
+    flex: none;
+  }
+  .item .first-row {
+    align-self: left;
+  }
+  
+  a.locationBtn {
+    font-weight: 400;
+	text-align: center;
+    margin-left: 0;
+    align-self: flex-start;
+	margin-left: 32px;
+    width: 170px;
+
+	box-sizing: border-box;
+	white-space: nowrap;
+  }
+  
+  .floor > div {
+      display: flex;
+      align-items: center; 
+	  gap: 5px;
+  }
+  .floor b, .floor span { 
+      font-size: 13px !important; 
+      letter-spacing: -0.5px !important;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 70vw; 
+  }
+
+  
+  .floor, .group > div {
+      width: auto !important; 
+      display: block !important;
+  }
+
+  a.locationBtn {
+      
+      font-size: 11px;
+      padding: 6px 10px;
+      min-width: 120px;
+      margin-left: 32px;
+  }
+  
+  .floor, .group > div, .item, .progress-container {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(20, 35, 60, 0.95) !important;
+  }
+  
+  #container {
+    will-change: transform;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+}
+
+
+
+/* ===== Item pics ===== */
+.item img,
+.item .first-row img {
+  height: 40px; 
+  width: auto;
+  object-fit: contain;
+
+}
+
+/* Tooltip */
+.version-tooltip {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  
+  color: white;
+  padding: 16px 20px;
+  z-index: 10000;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  max-width: 300px;
+  pointer-events: auto;
+  box-sizing: border-box;
+}
+
+.version-tooltip strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--main-accent); /* Prilagođava boju naslova trenutnoj temi */
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.version-tooltip ul {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.version-tooltip li {
+  margin-bottom: 8px;
+  padding-left: 18px;
+  position: relative;
+  font-size: 0.95em;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.version-tooltip li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  background: var(--main-accent); /* Prilagođava boju točkica na listi trenutnoj temi */
+  border-radius: 50%;
+  box-shadow: 0 0 5px var(--main-accent);
+}
+
+
+/* Logo */
+.app-logo {
+  max-width: 280px;
+  width: 85%;
+  height: auto;
+  display: block;
+  margin: 0 auto 0px auto;
+filter: drop-shadow(0.5px 0.5px 0px var(--main-accent)) 
+          drop-shadow(-0.5px -0.5px 0px var(--main-accent)) 
+          drop-shadow(0.5px -0.5px 0px var(--main-accent)) 
+          drop-shadow(-0.5px 0.5px 0px var(--main-accent));
+}
+
+.app-title {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Broom animation */
+.broom-anim {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 24px;
+  pointer-events: none;
+  z-index: 10;
+  animation: broomSweep 0.8s ease-out forwards;
+}
+
+/* Broom animation */
+.broom-anim {
+  position: absolute;
+  top: 50%;
+  left: 10px; /* Kreće odmah nakon lijevog ruba */
+  transform: translateY(-50%) translateX(0) rotate(-15deg);
+  font-size: 24px;
+  pointer-events: none;
+  z-index: 10;
+  display: inline-block;
+  white-space: nowrap;
+  animation: broomSweep 0.8s ease-out forwards;
+}
+
+@keyframes broomSweep {
+  0% {
+    /* Početak: na lijevoj strani */
+    transform: translateY(-50%) translateX(0) rotate(-15deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    /* Kraj: var(--broom-end) preuzima točnu širinu cijelog diva iz JS-a */
+    transform: translateY(-50%) translateX(var(--broom-end)) rotate(10deg);
+    opacity: 0;
+  }
+}
+
+.toggle {
+  cursor: pointer;    
+  user-select: none;   
+  padding: 4px 8px;  
+  border-radius: 4px;
+  transition: all 0.15s;
+}
+
+.toggle:hover {
+  background: rgba(0, 100, 200, 0.15);
+  color: #0066cc;
+}
+
+.toggle.active {
+  color: #004080;
+  font-weight: bold;
+}
+
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--main-accent);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+  vertical-align: middle; 
+  margin-top: -2px;
+  line-height: 1;
+}
+
+input[type="checkbox"]:checked {
+  background: var(--main-accent);
+  box-shadow: 0 0 10px var(--main-accent);
+}
+
+input[type="checkbox"]:checked::after {
+  content: '✔';
+  position: absolute;
+  color: #090a0f;
+  font-size: 14px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.group-counter {
+  background: rgba(0, 242, 254, 0.2) !important;
+  color: #004080 !important;
+  padding: 2px 8px !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(0, 242, 254, 0.4);
+  font-weight: bold;
+}
+
+/* Active button style (filter on) */
+#openUncheckedBtn.active-filter {
+    background: var(--main-accent) !important;
+    color: var(--btn-text) !important;
+    box-shadow: 0 0 25px var(--main-accent);
+    transform: scale(0.98);
+}
+
+/* Potpuno forsiranje boje teksta za sve varijacije gumba u meniju */
+.menu-dropdown a,
+.menu-dropdown a *,
+#menuDropdown a,
+#menuDropdown a *,
+a.menu-item-btn,
+a.menu-item-btn * {
+  color: var(--btn-text) !important;
+  text-decoration: none !important;
+}
+
+
+</style>
+</head>
+<body>
+<!-- WELCOME SCREEN -->
+<div id="welcomeOverlay" class="welcome-overlay">
+  <div class="welcome-content">
+    <h2>Welcome to DeepSweep!</h2>
+    <div class="instructions">
+      <p>Use this app to track your trash museum progress. Here are a few important tips before you start:</p>
+      <ul>
+        <li><strong>Progress Storage:</strong> Your data is saved <strong>locally</strong> in your browser's storage.</li>
+        <li><strong>Warning:</strong> Clearing your browser cache or "Website Data" will <strong>permanently delete</strong> all your progress!</li>
+		<li><strong>Export</strong> makes a backup file of your trash collection, <strong>Import</strong> restores from created file.</li>
+        <li><strong>What's New:</strong> Tap the version number in the top right corner to see recent updates and changes.</li>
+      </ul>
+    </div>
+    <button id="closeWelcomeBtn" class="menu-item-btn">Got it, let's go!</button>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="topBar">
+  <div class="header-main-content">
+    <div class="reel-container">
+      <button id="menuBtn" class="menu-btn">
+        <div class="reel-dots"></div>
+      </button>
+    </div>
+
+    <div class="progress-container">
+      <div id="progressBarFill" class="progress-fill"></div>
+      
+      <div id="fishWrapper" class="fish-wrapper">
+        <div id="fishCounterPopup" class="fish-popup">0 / 0</div>
+        <div class="target-box"></div>
+        <div class="fish-icon-realistic"></div>
+      </div>
+    </div>
+  </div>
+
+<div class="header-right-area">
+    <button class="version-style-btn" id="exportBtn">EXPORT</button>
+    <button class="version-style-btn" id="importBtn">IMPORT</button>
+    <div id="appVersion"></div> <input type="file" id="importFile" style="display:none" accept=".json">
+</div>
+
+<div id="menuDropdown" class="menu-dropdown">
+    <ul>
+      <!-- Izbornik za promjenu skina (teme) -->
+      <li>
+        <select id="themeSelect" class="menu-item-btn" style="text-align-last: center; appearance: auto; -webkit-appearance: auto;">
+          <option value="default" style="color: black;">Skin: Deep Dark</option>
+          <option value="neon-toxic" style="color: black;">Skin: Neon Toxic</option>
+          <!--<option value="aqua-marine" style="color: black;">Skin: Aqua Marine</option>-->
+          <!--<option value="amish-wood" style="color: black;">Skin: Amish Wood</option>-->
+          <option value="museum-workshop" style="color: black;">Skin: Museum Workshop</option>
+        </select>
+      </li>
+      
+      <!-- Ostatak tvog originalnog izbornika -->
+      <li><button id="installBtn" class="menu-item-btn">Install</button></li>
+      <li><a href="https://cloversalad.com/" class="menu-item-btn" target="_blank">CloverSalad</a></li>
+      <li><a href="https://fish-metrics.com/" class="menu-item-btn" target="_blank">FishMetrics</a></li>
+      <li><button id="showHelpBtn" class="menu-item-btn">Help & Instructions</button></li>
+    </ul>
+  </div>
+</div>
+
+
+<div id="installAlert" class="version-tooltip" style="display:none">
+  <p><strong>To install DeepSweep:</strong></p>
+  <ul><strong>Android:</strong> Open browser menu → Add to Home screen</ul>
+  <ul><strong>iOS:</strong> Tap Share → Add to Home Screen</ul>
+</div>
+<div id="versionTooltip" class="version-tooltip" style="display:none">
+  <strong>What's new</strong>
+  <ul id="changesList"></ul>
+</div>
+
+<div class="app-title">
+  <img src="logo.png" alt="DeepSweep" class="app-logo">
+</div>
+<!--<p id="counter">Total Trash: 0 | Found: 0</p> -->
+
+
+<!-- Search Field -->
+<div class="search-container">
+  <div class="search-wrapper">
+    <input type="text" id="itemSearch" placeholder="Search items..." autocomplete="off">
+    <button id="clearSearch" class="clear-btn" style="display: none;">&times;</button>
+  </div>
+</div>
+
+<!-- Find Unfound + Location Filter -->
+<button id="openUncheckedBtn">Missing Items</button>
+<select id="locationFilter">
+  <option value="-all-">-all-</option>
+</select>
+
+<ul id="container"></ul>
+
+<script>
+// START OVERLAY
+(function() {
+  // Funkcija za prikaz
+  function showInstructions() {
+    const overlay = document.getElementById('welcomeOverlay');
+    if (overlay) {
+      overlay.classList.add('show');
+    }
+    const menu = document.getElementById('menuDropdown');
+    if (menu) {
+      menu.style.display = 'none';
+    }
+  }
+
+  // 1. Automatski prikaz (samo prvi put)
+  const tutorialSeen = localStorage.getItem('deepsweep_tutorial_seen');
+  if (!tutorialSeen) {
+    // Čekamo da se stranica skroz učita prije nego pokažemo overlay
+    window.addEventListener('load', () => {
+      setTimeout(showInstructions, 800);
+    });
+  }
+
+  // 2. Delegacija klika (ovako ne ovisimo o tome je li gumb spreman ili null)
+  document.addEventListener('click', (e) => {
+    // Ako kliknemo na gumb za pomoć
+    if (e.target && e.target.id === 'showHelpBtn') {
+      e.preventDefault();
+      showInstructions();
+    }
+    
+    // Ako kliknemo na gumb za zatvaranje
+    if (e.target && e.target.id === 'closeWelcomeBtn') {
+      const overlay = document.getElementById('welcomeOverlay');
+      if (overlay) {
+        overlay.classList.remove('show');
+        localStorage.setItem('deepsweep_tutorial_seen', 'true');
+      }
+    }
+  });
+})();
+
+// Menu toggle
+const menuBtn = document.getElementById('menuBtn');
+const menuDropdown = document.getElementById('menuDropdown');
+
+menuBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  menuDropdown.style.display = menuDropdown.style.display === 'block' ? 'none' : 'block';
+});
+
+document.addEventListener('click', (e) => {
+  if (!menuBtn.contains(e.target) && !menuDropdown.contains(e.target)) {
+    menuDropdown.style.display = 'none';
+  }
+});
+
+
+// --- INSTALL BUTTON + ALERT ---
+
+const installAlert = document.getElementById('installAlert');
+let installTooltipVisible = false;
+
+// --- PWA install logic ---
+let deferredPrompt;
+const installBtn = document.getElementById('installBtn');
+function hideInstall() {
+  const installLi = installBtn.closest('li');
+  if (installLi) installLi.style.display = 'none';
+  installAlert.style.display = 'none';
+}
+
+function showInstall() {
+  const installLi = installBtn.closest('li');
+  if (installLi) installLi.style.display = '';
+}
+
+// Check if app is installed
+if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
+  hideInstall();
+} else {
+  showInstall(); 
+}
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  showInstall();
+});
+installBtn.addEventListener('touchend', (e) => {
+  e.preventDefault();
+});
+
+
+function showInstallTooltip() {
+  if (installAlert.style.display === 'block') return;
+
+  installAlert.style.display = 'block';
+  installAlert.style.opacity = '0';
+  installAlert.style.transform = 'translateY(-6px)';
+
+  const rect = installBtn.getBoundingClientRect();
+  
+  installAlert.style.top = (rect.bottom + window.scrollY + 8) + 'px';
+
+  let left = rect.left + window.scrollX;
+  const padding = 12;
+  const tooltipWidth = installAlert.offsetWidth;
+
+  if (left + tooltipWidth > window.innerWidth - padding) {
+    left = window.innerWidth - tooltipWidth - padding;
+  }
+  if (left < padding) {
+    left = padding;
+  }
+
+  installAlert.style.left = left + 'px';
+  installAlert.style.right = 'auto';
+
+  requestAnimationFrame(() => {
+    installAlert.style.opacity = '1';
+    installAlert.style.transform = 'translateY(0)';
+  });
+
+  installTooltipVisible = true;
+}
+
+function hideInstallTooltip() {
+  if (!installTooltipVisible) return;
+  installAlert.style.opacity = '0';
+  installAlert.style.transform = 'translateY(-6px)';
+  setTimeout(() => {
+    installAlert.style.display = 'none';
+    installTooltipVisible = false;
+  }, 180);
+}
+
+function toggleInstallTooltip(e) {
+  e.preventDefault();
+  e.stopPropagation();
+
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(({ outcome }) => {
+      deferredPrompt = null;
+      if (outcome === 'accepted') {
+        hideInstall();
+      }
+      hideInstallTooltip();
+    });
+    return;
+  }
+
+  if (installTooltipVisible) {
+    hideInstallTooltip();
+  } else {
+    showInstallTooltip();
+  }
+}
+
+const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+if (isTouch) {
+  installBtn.addEventListener('touchend', toggleInstallTooltip);
+} else {
+  installBtn.addEventListener('click', toggleInstallTooltip);
+}
+
+function closeIfOutside(e) {
+  if (!installTooltipVisible) return;
+  if (installBtn.contains(e.target) || installAlert.contains(e.target)) return;
+  hideInstallTooltip();
+}
+
+document.addEventListener(isTouch ? 'touchend' : 'click', closeIfOutside);
+
+installAlert.addEventListener(isTouch ? 'touchend' : 'click', e => e.stopPropagation());
+
+document.addEventListener('click', (e) => {
+  if (installAlert.style.display === 'block' &&
+      !installBtn.contains(e.target) &&
+      !installAlert.contains(e.target)) {
+    installAlert.style.display = 'none';
+  }
+});
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
+    .then(reg => {
+      console.log('Service Worker registered');
+      console.log('Scope:', reg.scope);          // vidiš točno što je postavljeno
+    })
+    .catch(err => console.log('SW registration failed', err));
+}
+
+// --- LocalStorage helpers ---
+function loadState(){ return JSON.parse(localStorage.getItem('deepsweepState')||'{}'); }
+function saveState(state){ localStorage.setItem('deepsweepState', JSON.stringify(state)); }
+
+// --- Counter ---
+function updateCounter() {
+    // Tražimo sve checkboxove unutar elemenata s klasom 'item'
+    const checkboxes = document.querySelectorAll('.item input[type="checkbox"]');
+    const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
+    const total = checkboxes.length;
+
+    console.log("Checkboxovi pronađeni:", total, "Označeno:", checked);
+
+    // 1. Ažuriranje skočnog prozorčića iznad ribe
+    const fishPopup = document.getElementById('fishCounterPopup');
+    if (fishPopup) {
+        fishPopup.textContent = `${checked} / ${total}`;
+    }
+
+    // 2. Ažuriranje glavnog tekstualnog brojača
+    const counterDisplay = document.getElementById('counter');
+    if (counterDisplay) {
+        counterDisplay.textContent = `Total Trash: ${total} | Found: ${checked}`;
+    }
+
+    // 3. Pomicanje ribe i punjenje trake (Povratak na čisti postotak)
+    const percentage = total > 0 ? (checked / total) * 100 : 0;
+    const fill = document.getElementById('progressBarFill');
+    const fishWrapper = document.getElementById('fishWrapper');
+
+    if (fill) fill.style.width = percentage + '%';
+    if (fishWrapper) fishWrapper.style.left = percentage + '%';
+}
+
+// VAŽNO: Pozovi funkciju jednom odmah pri učitavanju da ne stoji 0/0
+window.onload = updateCounter;
+
+// 2. Dodatak za mobitele: Klik na ribu pali prozorčić na 3 sekunde
+const fishContainer = document.getElementById('fishWrapper');
+if (fishContainer) {
+  fishContainer.addEventListener('click', function() {
+    this.classList.add('active');
+    
+    // Automatski sakrij nakon 3 sekunde
+    clearTimeout(this.hideTimeout);
+    this.hideTimeout = setTimeout(() => {
+      this.classList.remove('active');
+    }, 3000);
+  });
+}
+
+// --- Load JSON and build UI ---
+let state = loadState();
+
+fetch('/data.json')
+  .then(res => res.json())
+  .then(data => {
+    buildUI(data);
+    syncGroupAndFloorCheckboxes();
+    updateCounter();
+
+    // Manual order
+    const desiredOrder = [
+      "-all-",
+      "Paradise Island",
+      "Great Lakes",
+      "Costa Rica",
+      "Alaska",
+      "Australia",
+      "Scotland",
+      "Thailand",
+      "Amazon",
+	  "Marina",
+	  "Chemical Plant",
+	  "Nuclear Plant"
+    ];
+
+    const locationFilter = document.getElementById('locationFilter');
+    locationFilter.innerHTML = ''; // očisti stare opcije
+
+    const existingLocations = new Set(
+      data.map(item => item.locationName).filter(Boolean)
+    );
+
+    desiredOrder.forEach(loc => {
+      if (loc === "-all-" || existingLocations.has(loc)) {
+        const opt = document.createElement('option');
+        opt.value = loc;
+        opt.textContent = loc;
+        locationFilter.appendChild(opt);
+      }
+    });
+  })
+  .catch(err => {
+    console.error("Failed to load data.json", err);
+  });
+  
+
+
+
+function buildUI(data){
+  const floors = {};
+  data.forEach(item=>{
+    if(!floors[item.floor]) floors[item.floor]={};
+    if(!floors[item.floor][item.group]) floors[item.floor][item.group]=[];
+    floors[item.floor][item.group].push(item);
+  });
+
+  const container = document.getElementById('container');
+
+function createItem(item, groupCheckbox, floorCheckbox) {
+  const li = document.createElement('li'); 
+  li.className = 'item';
+
+  const wrapper = document.createElement('div');
+    
+  // 1. GENERIRANJE IDENTIČNOG ID-A
+
+  const f = (item.floor || "").replace(/\s/g, '_');
+  const g = (item.group || "").replace(/\s/g, '_');
+  const n = (item.name || "").replace(/\s/g, '_');
+  const l = (item.locationName || "Marina").replace(/\s/g, '_');
+  
+  const id = `${f}_${g}_${n}_${l}`;
+    
+  const cb = document.createElement('input'); 
+  cb.type = 'checkbox'; 
+  cb.id = id; 
+  cb.dataset.id = id;
+
+  if (state[id] !== undefined) {
+    cb.checked = state[id];
+  }
+
+  cb.addEventListener('change', () => {
+    if (navigator.vibrate) navigator.vibrate(15);
+    state[id] = cb.checked;
+    updateGroupAndFloor(groupCheckbox, floorCheckbox);
+    saveState(state);
+    updateCounter();
+  });
+
+  const img = document.createElement('img'); 
+  img.src = item.img; 
+  img.alt = item.name;
+  img.addEventListener('click', () => { 
+    cb.checked = !cb.checked; 
+    cb.dispatchEvent(new Event('change', { bubbles: true }));
+  });
+
+  const label = document.createElement('label'); 
+  label.setAttribute('for', id); 
+  label.textContent = item.name;
+  label.title = item.name; 
+
+  const firstRow = document.createElement('div');
+  firstRow.className = 'first-row';
+  firstRow.appendChild(cb);
+  firstRow.appendChild(img);
+
+  wrapper.appendChild(firstRow);
+  wrapper.appendChild(label);
+
+  if (item.locationName && item.locationLink) {
+    const locBtn = document.createElement('a');
+    locBtn.textContent = item.locationName;
+    locBtn.href = item.locationLink;
+    locBtn.target = '_blank';
+    locBtn.className = 'locationBtn';
+    wrapper.appendChild(locBtn);
+  }
+
+  li.appendChild(wrapper);
+  return li;
+}
+ function createGroup(groupName, items, floorCheckbox) {
+  const li = document.createElement('li'); li.className = 'group';
+  const wrapper = document.createElement('div');
+  const toggle = document.createElement('span'); toggle.textContent = '▶'; toggle.className = 'toggle';
+  const id = `group_${groupName}`.replace(/\s/g, '_');
+  const cb = document.createElement('input'); cb.type = 'checkbox'; cb.dataset.id = id;
+  if (state[id] !== undefined) cb.checked = state[id];
+
+  // --- COUNTER (NEW) ---
+  const groupStat = document.createElement('span');
+  groupStat.className = 'group-counter';
+  groupStat.style.marginLeft = '10px';
+  groupStat.style.fontSize = '0.85em';
+  groupStat.style.color = '#666';
+
+  const updateGroupText = () => {
+    const checkedCount = itemsList.querySelectorAll('li.item input[type="checkbox"]:checked').length;
+    const totalCount = items.length;
+    groupStat.textContent = `(${checkedCount}/${totalCount})`;
+  };
+  // -------------------------------
+
+  cb.addEventListener('change', () => {
+    const checked = cb.checked;
+    li.querySelectorAll('li.item input[type=checkbox]').forEach(i => {
+      i.checked = checked;
+      if (i.dataset.id) state[i.dataset.id] = i.checked;
+    });
+    state[id] = checked;
+    saveState(state);
+    updateGroupAndFloor(cb, floorCheckbox);
+    updateCounter();
+    
+    updateGroupText(); 
+  });
+
+  const label = document.createElement('span'); label.textContent = groupName;
+
+  const itemsList = document.createElement('ul');
+  items.forEach(item => itemsList.appendChild(createItem(item, cb, floorCheckbox)));
+  itemsList.style.display = 'none';
+
+  
+  itemsList.addEventListener('change', updateGroupText);
+
+ 
+  updateGroupText();
+
+  toggle.addEventListener('click', () => {
+    itemsList.style.display = itemsList.style.display === 'none' ? 'block' : 'none';
+    toggle.textContent = itemsList.style.display === 'none' ? '▶' : '▼';
+    toggle.classList.toggle('active', itemsList.style.display !== 'none');
+  });
+  label.addEventListener('click', () => toggle.click());
+
+  wrapper.appendChild(toggle); 
+  wrapper.appendChild(cb); 
+  wrapper.appendChild(label);
+  wrapper.appendChild(groupStat); 
+
+  li.appendChild(wrapper);
+  li.appendChild(itemsList);
+  return li;
+}
+
+  function createFloor(floorName, groups){
+    const li=document.createElement('li'); li.className='floor';
+    const wrapper=document.createElement('div');
+    const toggle=document.createElement('span'); toggle.textContent='▶'; toggle.className='toggle';
+    const id=`floor_${floorName}`.replace(/\s/g,'_');
+    const cb=document.createElement('input'); cb.type='checkbox'; cb.dataset.id=id;
+    if(state[id]!==undefined) cb.checked=state[id];
+
+      cb.addEventListener('change', ()=>{
+        const checked = cb.checked;
+        
+        window.isMassChecking = true;
+
+        li.querySelectorAll('li.group > div > input[type=checkbox], li.item input[type=checkbox]').forEach(i=>{
+            i.checked = checked;
+            if(i.dataset.id) state[i.dataset.id] = i.checked;
+    
+            if(i.dataset.id && i.dataset.id.startsWith('group_')) {
+                i.dispatchEvent(new Event('change'));
+            } 
+        });
+
+        window.isMassChecking = false;
+
+        state[id] = checked;
+        saveState(state);
+        updateCounter();
+
+        if (checked) {
+            playBroomAnimation(li);
+        }
+    });
+
+    const label=document.createElement('span'); label.textContent=floorName;
+    const groupsList=document.createElement('ul');
+    for(const groupName in groups) groupsList.appendChild(createGroup(groupName, groups[groupName], cb));
+    groupsList.style.display='none';
+
+    toggle.addEventListener('click', ()=>{ 
+        groupsList.style.display = groupsList.style.display==='none'?'block':'none'; 
+        toggle.textContent = groupsList.style.display==='none'?'▶':'▼'; 
+    });
+    label.addEventListener('click', ()=>toggle.click());
+
+    wrapper.appendChild(toggle); wrapper.appendChild(cb); wrapper.appendChild(label);
+    li.appendChild(wrapper);
+    li.appendChild(groupsList);
+    container.appendChild(li);
+  }
+
+  for(const floorName in floors) createFloor(floorName,floors[floorName]);
+
+  function updateGroupAndFloor(groupCheckbox, floorCheckbox){
+  const groupLi = groupCheckbox.closest('li.group');
+  const items = groupLi.querySelectorAll('li.item input[type=checkbox]');
+  const allChecked = Array.from(items).every(i=>i.checked);
+
+  groupCheckbox.checked = allChecked;
+
+if (allChecked) {
+  // Pokreni animaciju samo ako korisnik ručno klikće grupu, a ne preko floora
+  if (!window.isMassChecking) {
+    playBroomAnimation(groupLi);
+  }
+
+  // haptic feedback
+  if (navigator.vibrate) {
+    navigator.vibrate([20, 30, 20]);
+  }
+}
+
+function playBroomAnimation(elementLi) {
+  const wrapper = elementLi.querySelector('div');
+  if (!wrapper) return;
+
+  
+  if (wrapper.querySelector('.broom-anim')) return;
+
+  
+  if (!document.getElementById('broom-animation-styles')) {
+    const styleSheet = document.createElement("style");
+    styleSheet.id = 'broom-animation-styles';
+    styleSheet.innerText = `
+      @keyframes dynamicBroomSweep {
+        0% { transform: translateY(-50%) translateX(0) rotate(-15deg); opacity: 0; }
+        15% { opacity: 1; }
+        85% { opacity: 1; }
+        100% { transform: translateY(-50%) translateX(var(--broom-end)) rotate(10deg); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(styleSheet);
+  }
+
+  const broom = document.createElement('span');
+  broom.textContent = '🧹';
+  broom.className = 'broom-anim';
+
+  
+  wrapper.style.position = 'relative';
+  
+  broom.style.position = 'absolute';
+  broom.style.top = '50%';
+  broom.style.left = '10px'; 
+  broom.style.fontSize = '24px';
+  broom.style.pointerEvents = 'none';
+  broom.style.zIndex = '100'; 
+  broom.style.display = 'inline-block';
+  broom.style.whiteSpace = 'nowrap';
+  
+  broom.style.animation = 'dynamicBroomSweep 1.5s ease-out forwards';
+
+  const totalWidth = wrapper.offsetWidth - 40;
+  broom.style.setProperty('--broom-end', totalWidth + 'px');
+
+  wrapper.appendChild(broom);
+
+  broom.addEventListener('animationend', () => {
+    broom.remove();
+  });
+
+  setTimeout(() => {
+    if (broom && broom.parentNode) {
+      broom.remove();
+    }
+  }, 1550);
+}
+
+  // floor logic
+  const groups = floorCheckbox
+    .closest('li.floor')
+    .querySelectorAll('li.group > div > input[type=checkbox]');
+
+  floorCheckbox.checked = Array.from(groups).every(g=>g.checked);
+}
+}
+function syncGroupAndFloorCheckboxes() {
+  // GROUPS
+  document.querySelectorAll('li.group').forEach(groupLi => {
+    const groupCheckbox = groupLi.querySelector('div > input[type=checkbox]');
+    const items = groupLi.querySelectorAll('li.item input[type=checkbox]');
+    if (!groupCheckbox || items.length === 0) return;
+
+    groupCheckbox.checked = Array.from(items).every(cb => cb.checked);
+  });
+
+  // FLOORS
+  document.querySelectorAll('li.floor').forEach(floorLi => {
+    const floorCheckbox = floorLi.querySelector('div > input[type=checkbox]');
+    const groupCheckboxes = floorLi.querySelectorAll('li.group > div > input[type=checkbox]');
+    if (!floorCheckbox || groupCheckboxes.length === 0) return;
+
+    floorCheckbox.checked = Array.from(groupCheckboxes).every(cb => cb.checked);
+  });
+}
+
+// --- Find Unfound with Location Filter (Toggle Behavior) ---
+let missingOpen = false; 
+
+function runMissingItemsFilter() {
+  const filter = document.getElementById('locationFilter').value;
+  const btn = document.getElementById('openUncheckedBtn'); 
+
+  if (missingOpen) {
+    document.querySelectorAll('li.floor').forEach(floorLi => {
+      const groupsList = floorLi.querySelector('ul');
+      if (groupsList) groupsList.style.display = 'none';
+      const floorToggle = floorLi.querySelector('.toggle');
+      if (floorToggle) floorToggle.textContent = '▶';
+      floorLi.querySelectorAll('li.group').forEach(groupLi => {
+        const ul = groupLi.querySelector('ul');
+        const toggle = groupLi.querySelector('.toggle');
+        if (ul) ul.style.display = 'none';
+        if (toggle) toggle.textContent = '▶';
+        groupLi.querySelectorAll('li.item').forEach(itemLi => {
+          itemLi.style.display = '';
+        });
+      });
+    });
+    btn.classList.remove('active-filter'); 
+    missingOpen = false;
+    return;
+  }
+
+  document.querySelectorAll('li.floor').forEach(floorLi => {
+    let floorHasUnchecked = false;
+    floorLi.querySelectorAll('li.group').forEach(groupLi => {
+      let groupHasUnchecked = false;
+      groupLi.querySelectorAll('li.item').forEach(itemLi => {
+        const cb = itemLi.querySelector('input[type=checkbox]');
+        const locBtn = itemLi.querySelector('.locationBtn');
+        const locName = locBtn ? locBtn.textContent : null;
+        const matchesLocation = filter === '-all-' || filter === locName;
+        if (!matchesLocation || cb.checked) {
+          itemLi.style.display = 'none';
+          return;
+        }
+        itemLi.style.display = '';
+        groupHasUnchecked = true;
+      });
+      const ul = groupLi.querySelector('ul');
+      const toggle = groupLi.querySelector('.toggle');
+      if (groupHasUnchecked) {
+        ul.style.display = 'block';
+        toggle.textContent = '▼';
+        floorHasUnchecked = true;
+      } else {
+        ul.style.display = 'none';
+        toggle.textContent = '▶';
+      }
+    });
+    const floorUl = floorLi.querySelector('ul');
+    const floorToggle = floorLi.querySelector('.toggle');
+    if (floorHasUnchecked) {
+      floorUl.style.display = 'block';
+      floorToggle.textContent = '▼';
+    } else {
+      floorUl.style.display = 'none';
+      floorToggle.textContent = '▶';
+    }
+  });
+  btn.classList.add('active-filter');
+  missingOpen = true;
+}
+
+
+function refreshMissingItemsFilter() {
+  if (!missingOpen) return;
+  missingOpen = false;
+  runMissingItemsFilter();
+}
+
+document.getElementById('openUncheckedBtn').addEventListener('click', runMissingItemsFilter);
+document.getElementById('locationFilter').addEventListener('change', refreshMissingItemsFilter);
+
+// ================= VERSION BADGE TOOLTIP =================
+fetch('/version.json')
+  .then(res => res.json())
+  .then(v => {
+    const badge = document.getElementById('appVersion');
+    if (!badge) return;
+
+    const currentVersion = v.current;
+    const changes = v.changes?.[currentVersion] || [];
+
+    badge.textContent = 'v' + currentVersion;
+
+    // red dot
+    if (localStorage.getItem('deepsweep_seenVersion') !== currentVersion) {
+      const dot = document.createElement('span');
+      Object.assign(dot.style, {
+        display: 'inline-block',
+        width: '8px',
+        height: '8px',
+        background: 'red',
+        borderRadius: '50%',
+        marginLeft: '6px',
+        verticalAlign: 'middle'
+      });
+      badge.appendChild(dot);
+    }
+
+    let tooltip = null;
+
+    const closeTooltip = () => {
+      if (!tooltip) return;
+      tooltip.style.opacity = '0';
+      tooltip.style.transform = 'translateY(-6px)';
+      setTimeout(() => {
+        tooltip?.remove();
+        tooltip = null;
+      }, 160);
+    };
+
+    const toggleTooltip = (e) => {
+      e.stopPropagation();
+      if (!changes.length) return;
+
+      if (tooltip) {
+        closeTooltip();
+        return;
+      }
+
+      tooltip = document.createElement('div');
+      tooltip.className = 'version-tooltip';
+      tooltip.innerHTML = `
+        <strong>What's new</strong>
+        <ul>${changes.map(c => `<li>${c}</li>`).join('')}</ul>
+      `;
+
+      document.body.appendChild(tooltip);
+
+      const rect = badge.getBoundingClientRect();
+	  tooltip.style.top = (rect.bottom + window.scrollY + 8) + 'px';
+
+      let left = rect.left + window.scrollX;
+      const tooltipWidth = tooltip.offsetWidth;
+const badgeRight = rect.right + window.scrollX;
+if (left + tooltipWidth > badgeRight) {
+  left = badgeRight - tooltipWidth;  // desna strana tooltipa = desna strana badgea
+}
+
+if (left < 8) left = 8;
+if (left + tooltipWidth > window.innerWidth - 8) {
+  left = window.innerWidth - tooltipWidth - 8;
+}
+
+tooltip.style.left = left + 'px';
+
+      requestAnimationFrame(() => {
+        tooltip.style.opacity = '1';
+        tooltip.style.transform = 'translateY(0)';
+      });
+
+      localStorage.setItem('deepsweep_seenVersion', currentVersion);
+      badge.querySelector('span')?.remove();
+    };
+
+badge.addEventListener('click', toggleTooltip);
+
+if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+  badge.addEventListener('touchend', (e) => {
+    e.preventDefault();
+    toggleTooltip(e);
+  });
+}
+
+    document.addEventListener('click', (e) => {
+      if (tooltip && !badge.contains(e.target) && !tooltip.contains(e.target)) {
+        closeTooltip();
+      }
+    });
+  })
+  .catch(err => console.error('Failed to load version.json', err));
+
+// --- SEARCH ---
+const itemSearch = document.getElementById('itemSearch');
+const clearSearch = document.getElementById('clearSearch');
+
+if (itemSearch && clearSearch) {
+    
+    itemSearch.addEventListener('input', function() {
+        const term = this.value.toLowerCase().trim();
+        
+        
+        if (term.length > 0 && typeof missingOpen !== 'undefined' && missingOpen) {
+            missingOpen = false;
+            const miBtn = document.getElementById('openUncheckedBtn');
+            if (miBtn) miBtn.classList.remove('active-filter');
+        }
+
+        const isMissingOnly = (typeof missingOpen !== 'undefined') ? missingOpen : false;
+
+        
+        clearSearch.style.display = term.length > 0 ? 'flex' : 'none';
+
+        document.querySelectorAll('li.floor').forEach(floorLi => {
+            let floorHasVisibleGroups = false;
+
+            floorLi.querySelectorAll('li.group').forEach(groupLi => {
+                let groupHasVisibleItems = false;
+
+                groupLi.querySelectorAll('li.item').forEach(itemLi => {
+                    const label = itemLi.querySelector('label').textContent.toLowerCase();
+                    const cb = itemLi.querySelector('input[type=checkbox]');
+                    
+                    const matchesSearch = label.includes(term);
+                    let matchesMissing = isMissingOnly ? !cb.checked : true;
+
+                    if (matchesSearch && matchesMissing) {
+                        itemLi.style.display = '';
+                        groupHasVisibleItems = true;
+                    } else {
+                        itemLi.style.display = 'none';
+                    }
+                });
+
+                const groupUl = groupLi.querySelector('ul');
+                const groupToggle = groupLi.querySelector('.toggle');
+
+                if (groupHasVisibleItems) {
+                    groupLi.style.display = '';
+                    if (term.length > 0 && groupUl) {
+                        groupUl.style.display = 'block';
+                        if (groupToggle) groupToggle.textContent = '▼';
+                    }
+                    floorHasVisibleGroups = true;
+                } else {
+                    groupLi.style.display = 'none';
+                }
+            });
+
+            const floorUl = floorLi.querySelector('ul');
+            const floorToggle = floorLi.querySelector('.toggle');
+
+            if (floorHasVisibleGroups) {
+                floorLi.style.display = '';
+                if (term.length > 0 && floorUl) {
+                    floorUl.style.display = 'block';
+                    if (floorToggle) floorToggle.textContent = '▼';
+                }
+            } else {
+                floorLi.style.display = 'none';
+            }
+        });
+    });
+
+    
+    clearSearch.addEventListener('click', function() {
+        itemSearch.value = '';
+        this.style.display = 'none';
+        
+        
+        const miBtn = document.getElementById('openUncheckedBtn');
+        if (miBtn) miBtn.classList.remove('active-filter');
+        if (typeof missingOpen !== 'undefined') missingOpen = false;
+
+        
+        itemSearch.dispatchEvent(new Event('input'));
+
+        
+        document.querySelectorAll('li.floor, li.group').forEach(el => {
+            const ul = el.querySelector('ul');
+            const toggle = el.querySelector('.toggle');
+            
+            if (ul) ul.style.display = 'none';
+            if (toggle) {
+                toggle.textContent = '▶';
+                toggle.classList.remove('active');
+            }
+        });
+
+        itemSearch.focus();
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // --- EXPORT DATA ---
+    const exportBtn = document.getElementById('exportBtn');
+    if (exportBtn) {
+        exportBtn.addEventListener('click', () => {
+            const rawData = localStorage.getItem('deepsweepState');
+            const dataObj = rawData ? JSON.parse(rawData) : null;
+
+            if (!dataObj || Object.keys(dataObj).length === 0) {
+                alert("No progress to backup yet!");
+                return;
+            }
+
+            const data = JSON.stringify(dataObj, null, 2);
+            const blob = new Blob([data], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            
+            const now = new Date();
+            const dateStr = now.toISOString().slice(0, 10);
+            const timeStr = now.getHours().toString().padStart(2, '0') + '-' + 
+                           now.getMinutes().toString().padStart(2, '0');
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `DeepSweep_Backup_${dateStr}_${timeStr}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+    }
+
+    // --- IMPORT DATA ---
+    const importBtn = document.getElementById('importBtn');
+    const importFile = document.getElementById('importFile');
+
+    if (importBtn && importFile) {
+        importBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            importFile.click();
+        });
+
+        importFile.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                try {
+                    const importedData = JSON.parse(event.target.result);
+
+                    if (confirm("Importing this backup will overwrite your current progress. Do you want to continue?")) {
+                        const cleanedData = {};
+                        const rawLocations = [
+                            "Paradise Island", "Great Lakes", "Costa Rica", "Alaska", 
+                            "Australia", "Scotland", "Thailand", "Amazon", 
+                            "Marina", "Chemical Plant", "Nuclear Plant"
+                        ];
+
+                        const validSuffixes = rawLocations.map(loc => "_" + loc.replace(/\s/g, '_'));
+
+                        Object.keys(importedData).forEach(key => {
+                            const isStructure = key.startsWith('group_') || key.startsWith('floor_');
+                            const hasValidLocation = validSuffixes.some(suffix => key.endsWith(suffix));
+
+                            if (isStructure || hasValidLocation) {
+                                cleanedData[key] = importedData[key];
+                            }
+                        });
+
+                        localStorage.removeItem('deepsweepState');
+                        localStorage.setItem('deepsweepState', JSON.stringify(cleanedData));
+                        
+                        if (typeof state !== 'undefined') {
+                            state = cleanedData;
+                        }
+
+                        alert("Backup imported successfully!");
+                        window.location.href = window.location.pathname + "?t=" + Date.now();
+                    }
+                } catch (err) {
+                    console.error("Import error:", err);
+                    alert("Error: The file is not a valid backup!");
+                }
+                importFile.value = '';
+            };
+            reader.readAsText(file);
+        });
+    }
+});
+
+
+// --- SKIN CHANGE  ---
+(function() {
+  const themeSelect = document.getElementById('themeSelect');
+  const menuDropdown = document.getElementById('menuDropdown'); // Dodano radi lakšeg zatvaranja izbornika
+  
+  // load skin or make default
+  const savedTheme = localStorage.getItem('deepsweep_theme') || 'default';
+  
+  // skin change function
+  function applyTheme(themeName) {
+    document.documentElement.setAttribute('data-theme', themeName);
+    localStorage.setItem('deepsweep_theme', themeName);
+    if (themeSelect) {
+      themeSelect.value = themeName;
+    }
+  }
+
+  // load at startup
+  applyTheme(savedTheme);
+
+  // listen to dropdown menu change
+  if (themeSelect) {
+    themeSelect.addEventListener('change', (e) => {
+      applyTheme(e.target.value);
+      
+      // theme change then turn off menu
+      if (menuDropdown) {
+        menuDropdown.style.display = 'none';
+      }
+      
+      // phone vibration
+      if (navigator.vibrate) navigator.vibrate(15);
+    });
+    
+    // don't close menu when clicking on select itself
+    themeSelect.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+      themeSelect.addEventListener('touchend', (e) => {
+        e.stopPropagation();
+      });
+    }
+  }
+})();
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,2586 @@
+[
+    {
+        "floor": "Ground Floor",
+        "group": "Glasses",
+        "name": "Cobra Sunglasses",
+        "img": "images/GL_T_Cobra_sunglasses_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-11"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Glasses",
+        "name": "Scuba Diver Mask",
+        "img": "images/CR_T_Scuba_diver_mask_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-22"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Glasses",
+        "name": "Sunglasses",
+        "img": "images/AU_T_Sunglasses_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-19"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Glasses",
+        "name": "Muay Thai Headgear",
+        "img": "images/TH_T_Muay_thai_headgear_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-15"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Glasses",
+        "name": "Carnival Costume",
+        "img": "images/AM_T_Carnival_Costume.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-9"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Glasses",
+        "name": "Protective Suit",
+        "img": "images/CP_T_Protective_suit_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-21"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Glasses",
+        "name": "Protective Mask",
+        "img": "images/CP_T_Protective_mask_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-20"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Glasses",
+        "name": "“Cat Eye” Glasses",
+        "img": "images/NP_T_Trash10_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb5"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Hats",
+        "name": "Koala Hat",
+        "img": "images/AU_T_Koala_hat_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-11"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Hats",
+        "name": "Bubba Gump Cap",
+        "img": "images/TH_T_Bubba_gump_cap_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-5"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Hats",
+        "name": "Beaver Hat",
+        "img": "images/GL_T_Beaver_hat_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-3"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Hats",
+        "name": "Baseball Hat",
+        "img": "images/GL_T_Baseball_hat_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-1"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Hats",
+        "name": "Al ‘Capone Cap",
+        "img": "images/GL_T_AlCapone_hat_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-2"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Hats",
+        "name": "Cork Hat",
+        "img": "images/AU_T_Cork_hat_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-6"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Hats",
+        "name": "Pirate Hat",
+        "img": "images/CR_T_Pirate_hat_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-19"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Hats",
+        "name": "Scottish Hat",
+        "img": "images/SC_T_Scottish_hat_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-20"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Hats",
+        "name": "Snowman Hat",
+        "img": "images/AL_T_Snowman_hat_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-21"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Hats",
+        "name": "Straw Hat",
+        "img": "images/PI_T_Straw_hat_2.png",
+        "locationName": "Paradise Island",
+        "locationLink": "https://cloversalad.com/maps/paradise/items/?id=T1-7"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Hats",
+        "name": "Colorful Headdress",
+        "img": "images/GL_T_Colorful_headdress_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-4"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Hats",
+        "name": "Boné",
+        "img": "images/AM_T_Bon%C3%A9.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-4"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Hats",
+        "name": "Viking Helmet",
+        "img": "images/AL_T_Viking_helmet_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-25"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Shells",
+        "name": "Pearl",
+        "img": "images/AU_T_Pearl_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-15"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Shells",
+        "name": "Common Seashell",
+        "img": "images/Common_SeaShell_icon.png",
+        "locationName": "Marina",
+        "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-2"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Shells",
+        "name": "Turban Shell",
+        "img": "images/Turban_Shell_Icon.png",
+        "locationName": "Marina",
+        "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-1"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Shells",
+        "name": "Tiny Pink Shell",
+        "img": "images/Tiny_Pink_Shell_icon.png",
+        "locationName": "Marina",
+        "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-4"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Shells",
+        "name": "Urchin Shell",
+        "img": "images/Urchin_Shell_Icon.png",
+        "locationName": "Marina",
+        "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-5"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Shells",
+        "name": "Striped Beach Shell",
+        "img": "images/Striped_Beach_Shell_icon.png",
+        "locationName": "Marina",
+        "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-6"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Clothing",
+        "name": "Gold Necklace",
+        "img": "images/TH_T_Gold_necklace_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-11"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Clothing",
+        "name": "Kilt",
+        "img": "images/SC_T_Kilt_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-13"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Clothing",
+        "name": "Football Jersey",
+        "img": "images/AM_T_Football_Jersey.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-16"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Clothing",
+        "name": "Bikini Top",
+        "img": "images/CR_T_Bikini_top_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-4"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Clothing",
+        "name": "Life Jacket",
+        "img": "images/AL_T_Life_jacket_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-16"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Clothing",
+        "name": "Maori Jewelry",
+        "img": "images/AU_T_Maori_Jewelery_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-25"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Gloves",
+        "name": "Mouse Glove",
+        "img": "images/GL_T_Mouse_glove_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-31"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Shoes",
+        "name": "Concrete Shoe",
+        "img": "images/GL_T_Concrete_shoe_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-12"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Shoes",
+        "name": "Thai Poulaine Shoe",
+        "img": "images/TH_T_Thai_Poulaine_Shoes_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-25"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Shoes",
+        "name": "Flipper",
+        "img": "images/CR_T_Flipper_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-11"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Shoes",
+        "name": "Flip Flops",
+        "img": "images/PI_T_Flip_flops_2.png",
+        "locationName": "Paradise Island",
+        "locationLink": "https://cloversalad.com/maps/paradise/items/?id=T1-13"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Shoes",
+        "name": "Old Boot",
+        "img": "images/SC_T_Old_boot_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-18"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Shoes",
+        "name": "Snowshoe",
+        "img": "images/AL_T_Snowshoe_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-22"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Shoes",
+        "name": "Bowling Shoe",
+        "img": "images/NP_T_Bowling_Shoe_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb3"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 1",
+        "name": "Armor",
+        "img": "images/SC_T_Armor_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-1"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 1",
+        "name": "Excalibur",
+        "img": "images/SC_T_Excalibur_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-33"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 1",
+        "name": "Sai Knife",
+        "img": "images/CP_T_Sai_knive_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-28"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 2",
+        "name": "Rusty Axe Head",
+        "img": "images/AM_T_Rusty_Axe_Head.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-20"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 2",
+        "name": "Giant Shark Tooth",
+        "img": "images/AU_T_Giant_Shark_Tooth_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-26"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 2",
+        "name": "Boomerang",
+        "img": "images/AU_T_Boomerang_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-4"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 2",
+        "name": "Compass",
+        "img": "images/AL_T_Compass_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-4"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 2",
+        "name": "Moose Antler",
+        "img": "images/AL_T_Moose_antler_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-18"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 2",
+        "name": "Amazonian Blowpipe",
+        "img": "images/AM_T_Amazonian_biowpipe.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-1"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 2",
+        "name": "Arrow",
+        "img": "images/GL_T_Arrow_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-5"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 2",
+        "name": "Marine Trap",
+        "img": "images/AU_T_Marine_trap_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-13"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 2",
+        "name": "Unicorn Horn",
+        "img": "images/SC_T_Unicorn_horn_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-24"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 2",
+        "name": "Walrus Tusk",
+        "img": "images/AL_T_Walrus_tusk_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-27"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 2",
+        "name": "Feather",
+        "img": "images/AM_T_Feather.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-14"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 2",
+        "name": "Parrot Feather",
+        "img": "images/AU_T_Parrot_feather_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-14"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 2",
+        "name": "Tea Pot",
+        "img": "images/SC_T_Tea_pot_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-23"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 2",
+        "name": "Cauldron",
+        "img": "images/SC_T_Cauldron_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-5"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 2",
+        "name": "Gold Pan",
+        "img": "images/AL_T_Gold_pan_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-12"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 2",
+        "name": "Costa Rican Vase",
+        "img": "images/CR_T_Costa_Rican_vase_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-9"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 2",
+        "name": "Medieval Mug",
+        "img": "images/SC_T_Medieval_mug_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-16"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 2",
+        "name": "Whale Bone",
+        "img": "images/HI_T_Whale_Bone.png",
+        "locationName": "Marina",
+        "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-7"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 3",
+        "name": "Old Fishing Net",
+        "img": "images/TH_T_Old_fishing_net_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-16"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 3",
+        "name": "Harpoon",
+        "img": "images/AL_T_Harpoon_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-14"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 3",
+        "name": "Ancient Statue",
+        "img": "images/TH_T_Ancient_statue_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-1"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 3",
+        "name": "Mysterious Stone Sphere",
+        "img": "images/CR_T_Mysterious_stone_sphere_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-14"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 3",
+        "name": "Weird Stone",
+        "img": "images/SC_T_Weird_stone_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-29"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 3",
+        "name": "Silk Tapestry",
+        "img": "images/TH_T_Silk_tapestry_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-21"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 3",
+        "name": "Stone Block",
+        "img": "images/SC_T_Stone_block_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-22"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 3",
+        "name": "Carpet",
+        "img": "images/TH_T_Carpet_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-6"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 3",
+        "name": "Pipe",
+        "img": "images/GL_T_Pipe_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-22"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 3",
+        "name": "Manhole Cover",
+        "img": "images/CP_T_Manhole_Cover_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-10"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 3",
+        "name": "Oxcart Wheel",
+        "img": "images/CR_T_Oxcart_wheel_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-17"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 3",
+        "name": "Gear",
+        "img": "images/PI_T_Gear_2.png",
+        "locationName": "Paradise Island",
+        "locationLink": "https://cloversalad.com/maps/paradise/items/?id=T1-8"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 3",
+        "name": "Wooden Figurine",
+        "img": "images/AM_T_Wooden_Figurine.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-25"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 4",
+        "name": "Sporran",
+        "img": "images/SC_T_Tartan_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-21"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 4",
+        "name": "Waterproof Watch",
+        "img": "images/CR_T_Waterproof_watch_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-29"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 4",
+        "name": "Mask",
+        "img": "images/PI_T_Mask_2.png",
+        "locationName": "Paradise Island",
+        "locationLink": "https://cloversalad.com/maps/paradise/items/?id=T1-3"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Fridge Magnets",
+        "name": "Fridge Magnet",
+        "img": "images/PI_T_FridgeMagnet_2.png",
+        "locationName": "Paradise Island",
+        "locationLink": "https://cloversalad.com/maps/paradise/items/?id=T1-21"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Fridge Magnets",
+        "name": "Fridge Magnet",
+        "img": "images/Fridge_Magnet_GL_icon.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-32"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Fridge Magnets",
+        "name": "Fridge Magnet",
+        "img": "images/CR_T_Fridge_Magnet.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-12"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Fridge Magnets",
+        "name": "Fridge Magnet",
+        "img": "images/AL_T_Fridge_Magnet.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-6"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Fridge Magnets",
+        "name": "Fridge Magnet",
+        "img": "images/AU_T_Fridge_Magnet.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-28"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Fridge Magnets",
+        "name": "Fridge Magnet",
+        "img": "images/SC_T_Fridge_Magnet.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-34"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Fridge Magnets",
+        "name": "Fridge Magnet",
+        "img": "images/TH_T_Fridge_Magnet.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-10"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Fridge Magnets",
+        "name": "Fridge Magnet",
+        "img": "images/AM_T_Fridge_Magnet.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-28"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Fridge Magnets",
+        "name": "Fridge Magnet",
+        "img": "images/Fridge_Magnet_icon.png",
+        "locationName": "Marina",
+        "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-21"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Food 1",
+        "name": "Amazonian Honey",
+        "img": "images/AM_T_Amazonian_Honey.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-2"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Food 1",
+        "name": "Black Pudding",
+        "img": "images/SC_T_Black_pudding_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-3"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Food 1",
+        "name": "Haggis",
+        "img": "images/SC_T_Haggis_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-12"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Food 1",
+        "name": "Coffee Bean Bag",
+        "img": "images/AM_T_Coffee_Bean_Bag.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-11"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Food 1",
+        "name": "Ninja Pizza Slice",
+        "img": "images/CP_T_Ninja_Pizza_Slice_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-13"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Food 1",
+        "name": "Bowl of Rice",
+        "img": "images/TH_T_Bowl_of_rice_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-4"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Food 1",
+        "name": "Grandma’s Compote",
+        "img": "images/NP_T_Trash9_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb7"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Food 1",
+        "name": "Hamburger",
+        "img": "images/NP_T_Hamburger_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb8"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Food 2",
+        "name": "Hot Dog",
+        "img": "images/GL_T_Hot_dog_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-18"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Food 2",
+        "name": "Golden Apple",
+        "img": "images/SC_T_Golden_apple_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-32"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Food 2",
+        "name": "Shrimp Stick",
+        "img": "images/TH_T_Shrimp_stick_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-20"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Food 2",
+        "name": "Pina Colada Drink",
+        "img": "images/PI_T_Pinacolada_drink_2.png",
+        "locationName": "Paradise Island",
+        "locationLink": "https://cloversalad.com/maps/paradise/items/?id=T1-9"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Bottles",
+        "name": "Message in a Bottle",
+        "img": "images/PI_T_Message_in_a_bottle_2.png",
+        "locationName": "Paradise Island",
+        "locationLink": "https://cloversalad.com/maps/paradise/items/?id=T1-5"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Bottles",
+        "name": "Plastic Bottle",
+        "img": "images/GL_T_Plastic_bottle_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-23"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Bottles",
+        "name": "Massage Oil Bottle",
+        "img": "images/TH_T_Massage_oil_bottle_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-13"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Bottles",
+        "name": "Brazil Cachaca",
+        "img": "images/AM_T_Brazil_Cachaca.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-6"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Bottles",
+        "name": "Water Bottle",
+        "img": "images/CP_T_Water_bottle_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-35"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Bottles",
+        "name": "Empty Bottle",
+        "img": "images/PI_T_Empty_bottle_2.png",
+        "locationName": "Paradise Island",
+        "locationLink": "https://cloversalad.com/maps/paradise/items/?id=T1-1"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Bottles",
+        "name": "Whisky Scotch Bottle",
+        "img": "images/SC_T_Whiskey_scotch_bottle_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-26"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Bottles",
+        "name": "Plastic Water Bottle",
+        "img": "images/TH_T_Plastic_water_bottle_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-19"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Bottles",
+        "name": "Bottle of Suntan Oil",
+        "img": "images/AU_T_Bottle_of_suntan_oil_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-5"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Bottles",
+        "name": "Plastic Bottle",
+        "img": "images/PI_T_Plastic_bottle_2.png",
+        "locationName": "Paradise Island",
+        "locationLink": "https://cloversalad.com/maps/paradise/items/?id=T1-4"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Bottles",
+        "name": "White Bottle",
+        "img": "images/CR_T_White_bottle_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-30"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Bottles",
+        "name": "Glass Bottle with XXX Sign",
+        "img": "images/GL_T_Glass_bottle_with_XXX_sign_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-15"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Bottles",
+        "name": "Pesticides",
+        "img": "images/CP_T_Pesticides_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-15"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Bottles",
+        "name": "Bottle of Rocket Cola",
+        "img": "images/NP_T_Bottle_of_Rocket_Cola_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb15"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Floppy Disks",
+        "name": "Yellow Floppy Disk 5.25",
+        "img": "images/CR_T_Yellow_floppy_disk_5.25_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-32"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Floppy Disks",
+        "name": "Green Floppy Disk",
+        "img": "images/GL_T_Green_floppy_disc_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-16"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Floppy Disks",
+        "name": "Floppy Disc",
+        "img": "images/AU_T_Floppy_Disc_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-27"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Floppy Disks",
+        "name": "Floppy Disk 5.25 Blue",
+        "img": "images/SC_T_Floppy_disk_5.25_blue_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-8"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Floppy Disks",
+        "name": "Boom Floppy Disc",
+        "img": "images/GL_T_Boom_floppy_disc_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-6"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Floppy Disks",
+        "name": "Cartridge",
+        "img": "images/CP_T_Cartridge_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-2"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Floppy Disks",
+        "name": "Green Yellow Disk",
+        "img": "images/AM_T_Green_Yellow_Disk.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-26"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Floppy Disks",
+        "name": "Tetrix Floppy Disk 3.5",
+        "img": "images/AL_T_Tetrix_floppy_disk_3.5_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-23"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Floppy Disks",
+        "name": "“Sweet Fighter” Disk",
+        "img": "images/TH_T_Sweet_Fighter_Disk_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-24"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Floppy Disks",
+        "name": "Floppy Disk “POND”",
+        "img": "images/NP_T_Floppy_Disk_POND_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb13"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "VHS Tapes",
+        "name": "Video Cassette",
+        "img": "images/GL_T_Video_cassette_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-28"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "VHS Tapes",
+        "name": "Video Cassette",
+        "img": "images/AL_T_Video_cassette_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-24"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "VHS Tapes",
+        "name": "VHS Tape “Mudmax”",
+        "img": "images/NP_T_VHS_Tape_Mudmax_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb12"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Library",
+        "name": "Explorer Diary",
+        "img": "images/AU_T_Explorer_Diary_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-10"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Library",
+        "name": "Robby Burns Poetry",
+        "img": "images/SC_T_Robby_burns_poetry_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-19"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Library",
+        "name": "Research Files Vol.1",
+        "img": "images/CP_T_Technical_documentation_volume_1_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-24"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Library",
+        "name": "Research Files Vol.2",
+        "img": "images/CP_T_Technical_documentation_volume_2_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-25"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Library",
+        "name": "Research Files Vol.3",
+        "img": "images/CP_T_Research_files_volume_3_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-26"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Library",
+        "name": "Research Files Vol.4",
+        "img": "images/CP_T_Research_files_volume_4_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-27"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Library",
+        "name": "Prof. Flux's Notes",
+        "img": "images/CP_T_Prof._Flux%27s_notes_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-19"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Library",
+        "name": "Paradise Island Tourist Brochure",
+        "img": "images/Tourist_Brochure-Paradise_Island_icon.png",
+        "locationName": "Marina",
+        "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-13"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Library",
+        "name": "Great Lakes Tourist Brochure",
+        "img": "images/Tourist_Brochure-Great_Lakes_icon.png",
+        "locationName": "Marina",
+        "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-14"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Library",
+        "name": "Costa Rica Tourist Brochure",
+        "img": "images/Tourist_Brochure-Costa_Rica_icon.png",
+        "locationName": "Marina",
+        "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-15"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Library",
+        "name": "Alaska Tourist Brochure",
+        "img": "images/Tourist_Brochure-Alaska_Icon.png",
+        "locationName": "Marina",
+        "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-16"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Library",
+        "name": "Australia Tourist Brochure",
+        "img": "images/Tourist_Brochure-Australia_icon.png",
+        "locationName": "Marina",
+        "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-17"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Library",
+        "name": "Scotland Tourist Brochure",
+        "img": "images/Tourist_Brochure-Scotland_icon.png",
+        "locationName": "Marina",
+        "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-18"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Library",
+        "name": "Thailand Tourist Brochure",
+        "img": "images/Tourist_Brochure-Thailand_Icon.png",
+        "locationName": "Marina",
+        "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-19"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Library",
+        "name": "Amazon Tourist Brochure",
+        "img": "images/Tourist_Brochure-Amazon_Icon.png",
+        "locationName": "Marina",
+        "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-20"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Library",
+        "name": "Punch Card",
+        "img": "images/NP_T_Punch_Card_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb14"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Library",
+        "name": "Book “Understanding ATOM”",
+        "img": "images/NP_T_Book_Understanding_ATOM_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb9"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Sports 1",
+        "name": "Bicycle Frame",
+        "img": "images/CR_T_Bicycle_frame_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-3"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Sports 1",
+        "name": "Australian Cricket Bat",
+        "img": "images/AU_T_Australian_cricket_bat_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-2"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Sports 1",
+        "name": "Caber",
+        "img": "images/SC_T_Caber_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-4"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Sports 1",
+        "name": "Golf Club",
+        "img": "images/SC_T_Golf_club_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-10"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Sports 1",
+        "name": "Golf Bag",
+        "img": "images/SC_T_Golf_clubs_bag_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-11"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Sports 2",
+        "name": "Aussie Rule Ball",
+        "img": "images/AU_T_Aussie_rule_ball_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-1"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Sports 2",
+        "name": "Chess Piece",
+        "img": "images/SC_T_Chess_piece_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-6"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Sports 2",
+        "name": "Soccer Ball",
+        "img": "images/AM_T_Soccer_Ball.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-22"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Sports 2",
+        "name": "Basketball",
+        "img": "images/GL_T_Basketball_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-7"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Sports 2",
+        "name": "Wilson Ball",
+        "img": "images/PI_T_Wilson_ball_2.png",
+        "locationName": "Paradise Island",
+        "locationLink": "https://cloversalad.com/maps/paradise/items/?id=T1-19"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Sports 2",
+        "name": "Football Cup",
+        "img": "images/AM_T_Football_Cup.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-15"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Sports 2",
+        "name": "Golf Ball",
+        "img": "images/SC_T_Golf_ball_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-9"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Sports 2",
+        "name": "Bowling Pin",
+        "img": "images/NP_T_Bowling_Pin_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb2"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Sports 2",
+        "name": "Bowling Ball",
+        "img": "images/NP_T_Bowling_Ball_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb1"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Sports 3",
+        "name": "Ski",
+        "img": "images/AL_T_Ski_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-19"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Sports 3",
+        "name": "Surfboard",
+        "img": "images/CR_T_Surfboard_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-25"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Sports 3",
+        "name": "Surfboard",
+        "img": "images/AU_T_Surfboard_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-20"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Sports 3",
+        "name": "Skateboard",
+        "img": "images/CP_T_Skateboard_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-29"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Chests",
+        "name": "Frozen Chest",
+        "img": "images/AL_T_Frozen_Chest.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-8"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Chests",
+        "name": "Treasure Chest",
+        "img": "images/CR_T_Treasure_chest_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-26"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Chests",
+        "name": "Chest with a Skull",
+        "img": "images/PI_T_Chest_with_a_skull_2.png",
+        "locationName": "Paradise Island",
+        "locationLink": "https://cloversalad.com/maps/paradise/items/?id=T1-18"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Chests",
+        "name": "Tribal Chest",
+        "img": "images/GL_T_Tribal_Chest.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-25"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Chests",
+        "name": "Oriental Chest",
+        "img": "images/TH_T_Oriental_chest_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-17"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Chests",
+        "name": "Wooden Crate",
+        "img": "images/AU_T_Wooden_crate_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-23"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Chests",
+        "name": "Crocodile Crate",
+        "img": "images/AU_T_Treasure_Chest.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-7"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Chests",
+        "name": "Wooden Chest",
+        "img": "images/HI_T_Wooden_Chest.png",
+        "locationName": "Marina",
+        "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-12"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Chests",
+        "name": "Medieval Chest",
+        "img": "images/SC_T_Medieval_Chest.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-14"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Chests",
+        "name": "Decorated Chest",
+        "img": "images/AM_T_Decorated_chest.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-13"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Chests",
+        "name": "Lunchbox",
+        "img": "images/latest?cb=20260221021034",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb18"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Keys",
+        "name": "Frozen Key",
+        "img": "images/AL_T_Frozen_Key.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-9"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Keys",
+        "name": "Key with a Chain",
+        "img": "images/CR_T_Key_Chain.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-2"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Keys",
+        "name": "Key With a Skull",
+        "img": "images/PI_T_Key_with_a_skull_2.png",
+        "locationName": "Paradise Island",
+        "locationLink": "https://cloversalad.com/maps/paradise/items/?id=T1-17"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Keys",
+        "name": "Tribal Key",
+        "img": "images/GL_T_Tribal_Key.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-26"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Keys",
+        "name": "Oriental Key",
+        "img": "images/TH_H_Oriental_Key_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-18"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Keys",
+        "name": "Crocodile Key",
+        "img": "images/AU_T_Crocodile_Key.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-8"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Keys",
+        "name": "Mysterious Key",
+        "img": "images/HI_T_Mysterious_Key.png",
+        "locationName": "Marina",
+        "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-11"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Keys",
+        "name": "Medieval Key",
+        "img": "images/SC_T_Medieval_Key.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-15"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Keys",
+        "name": "Stone Key",
+        "img": "images/AM_T_Stone_key.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-23"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Keys",
+        "name": "Lunchbox Key",
+        "img": "images/NP_T_Lunchbox_Key2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb19"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Signs",
+        "name": "High Radiation Sign",
+        "img": "images/CP_T_High_radiation_sign_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-8"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Signs",
+        "name": "Kangaroo Road Sign",
+        "img": "images/AU_T_Kangaroo_road_sign_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-24"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Signs",
+        "name": "Sign",
+        "img": "images/CP_T_Sign_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-30"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Laboratory 1",
+        "name": "Geiger Counter",
+        "img": "images/CP_T_Geiger_Counter_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-4"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Laboratory 1",
+        "name": "Phosphorus",
+        "img": "images/CP_T_Phosphorus_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-16"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Laboratory 1",
+        "name": "Old Battery",
+        "img": "images/CP_T_Old_battery_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-14"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Laboratory 1",
+        "name": "Control Chip",
+        "img": "images/NP_T_Contol_Chip_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb17"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Laboratory 1",
+        "name": "Dead Battery",
+        "img": "images/NP_T_Dead_Battery_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb4"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Laboratory 1",
+        "name": "Uranium Container",
+        "img": "images/NP_T_Uramium_Container_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb21"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Laboratory 2",
+        "name": "Laboratory Equipment",
+        "img": "images/CP_T_Laboratory_equipment_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-9"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Laboratory 2",
+        "name": "Thermal Heating Device",
+        "img": "images/NP_T_Thermal_Heating_Device_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb25"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Laboratory 2",
+        "name": "Unique Scientific Catcher",
+        "img": "images/NP_T_Trash3_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb10"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Laboratory 2",
+        "name": "Laboratory Fridge",
+        "img": "images/NP_T_Trash16_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb11"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Wind Turbine",
+        "name": "Wind Turbine (Assembled)",
+        "img": "images/windturbine.png",
+        "locationName": "Chemical Plant",
+        "locationLink": ""
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Wind Turbine",
+        "name": "Wind Turbine Dynamo",
+        "img": "images/CP_T_Wind_turbine_dynamo_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-38"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Wind Turbine",
+        "name": "Wind Turbine Propeller Blade",
+        "img": "images/CP_T_Wind_turbine_propeller_blade_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-36"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Wind Turbine",
+        "name": "Wind Turbine Propeller Hub",
+        "img": "images/CP_T_Wind_turbine_propeller_hub_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-37"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Food Cans",
+        "name": "Can Fish",
+        "img": "images/PI_T_Can_fish_2.png",
+        "locationName": "Paradise Island",
+        "locationLink": "https://cloversalad.com/maps/paradise/items/?id=T1-6"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Food Cans",
+        "name": "Ham Can",
+        "img": "images/AL_T_Ham_can_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-13"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Food Cans",
+        "name": "Can Soup",
+        "img": "images/GL_T_Can_soup_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-9"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Food Cans",
+        "name": "Vegetime",
+        "img": "images/AU_T_Vegetime_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-22"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Food Cans",
+        "name": "Fish Can",
+        "img": "images/GL_T_Fish_can_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-14"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Food Cans",
+        "name": "Meat Can",
+        "img": "images/GL_T_Meat_can_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-19"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Food Cans",
+        "name": "Fish Can",
+        "img": "images/CR_T_Fish_can_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-10"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Food Cans",
+        "name": "Vegetable Can",
+        "img": "images/GL_T_Vegetable_can_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-27"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Food Cans",
+        "name": "Can of Dog Food",
+        "img": "images/NP_T_Can_of_Dog_Food_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb6"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Drink Cans",
+        "name": "Can",
+        "img": "images/PI_T_Can_2.png",
+        "locationName": "Paradise Island",
+        "locationLink": "https://cloversalad.com/maps/paradise/items/?id=T1-14"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Drink Cans",
+        "name": "Beverage Can",
+        "img": "images/GL_T_Beverage_can_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-8"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Drink Cans",
+        "name": "Beer Can",
+        "img": "images/AU_T_Beer_can_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-3"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Drink Cans",
+        "name": "Empty Can",
+        "img": "images/TH_T_Empty_can_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-9"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Drink Cans",
+        "name": "Green Can",
+        "img": "images/AM_T_Green_Can.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-17"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Drink Cans",
+        "name": "Can",
+        "img": "images/CP_T_Can_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-1"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Chip Bags",
+        "name": "Chips",
+        "img": "images/PI_T_Chips_2.png",
+        "locationName": "Paradise Island",
+        "locationLink": "https://cloversalad.com/maps/paradise/items/?id=T1-15"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Chip Bags",
+        "name": "Chip Bag",
+        "img": "images/GL_T_Chip_bag_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-10"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Chip Bags",
+        "name": "Chip Bag",
+        "img": "images/CR_T_Chip_bag_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-7"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Chip Bags",
+        "name": "Chip Bag",
+        "img": "images/AL_T_Chip_bag_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-3"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Chip Bags",
+        "name": "Chip Bag",
+        "img": "images/SC_T_Chip_Bag.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-7"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Chip Bags",
+        "name": "Bag of Chips",
+        "img": "images/AU_T_Bag_of_chips_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-31"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Barrels",
+        "name": "Plastic Barrel",
+        "img": "images/AU_T_Plastic_barrel_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-16"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Barrels",
+        "name": "Wooden Barrel",
+        "img": "images/SC_T_Wooden_barrel_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-27"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Barrels",
+        "name": "Rusty Barrel",
+        "img": "images/AM_T_Rusty_Barrel.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-21"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Barrels",
+        "name": "Toxic Barrel",
+        "img": "images/CP_T_Toxic_barrel_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-33"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Barrels",
+        "name": "Oil Barrel",
+        "img": "images/CR_T_Oil_barrel_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-15"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Barrels",
+        "name": "Toxic Barrel",
+        "img": "images/GL_T_Toxic_barrel_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-24"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Barrels",
+        "name": "Fuel Barrel",
+        "img": "images/AL_T_Oil_barrel_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-10"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flowers",
+        "name": "Red Wild Plant",
+        "img": "images/HI_Wild_plant_red_2.png",
+        "locationName": "Marina",
+        "locationLink": "https://creatures-of-the-deep-app.fandom.com/wiki/Map:Home_Island"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flowers",
+        "name": "Green Wild Plant",
+        "img": "images/HI_Wild_plant_green_2.png",
+        "locationName": "Marina",
+        "locationLink": "https://creatures-of-the-deep-app.fandom.com/wiki/Map:Home_Island"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flowers",
+        "name": "Yellow Wild Plant",
+        "img": "images/HI_Wild_plant_yellow_2.png",
+        "locationName": "Marina",
+        "locationLink": "https://creatures-of-the-deep-app.fandom.com/wiki/Map:Home_Island"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flowers",
+        "name": "Dark Blue Wild Plant",
+        "img": "images/HI_Wild_plant_purple_2.png",
+        "locationName": "Marina",
+        "locationLink": "https://creatures-of-the-deep-app.fandom.com/wiki/Map:Home_Island"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flowers",
+        "name": "Pink Wild Plant",
+        "img": "images/HI_Wild_plant_pink_2.png",
+        "locationName": "Marina",
+        "locationLink": "https://creatures-of-the-deep-app.fandom.com/wiki/Map:Home_Island"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flowers",
+        "name": "Blue Wild Plant",
+        "img": "images/HI_Wild_plant_blue_2.png",
+        "locationName": "Marina",
+        "locationLink": "https://creatures-of-the-deep-app.fandom.com/wiki/Map:Home_Island"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 1",
+        "name": "Broken Coral",
+        "img": "images/CR_T_Broken_coral_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-6"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 1",
+        "name": "Wilted Leaf",
+        "img": "images/GL_T_Wilted_leaf.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-30"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 1",
+        "name": "Palm Leaf",
+        "img": "images/CR_T_Palm_leaf_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-18"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 1",
+        "name": "Coffee Tree Branch",
+        "img": "images/AM_T_Coffee_Tree_Branch.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-12"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 1",
+        "name": "Toxic Algae",
+        "img": "images/CP_T_Toxic_algae_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-31"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 1",
+        "name": "Kelp Leaf",
+        "img": "images/PI_T_Kelp_leaf_2.png",
+        "locationName": "Paradise Island",
+        "locationLink": "https://cloversalad.com/maps/paradise/items/?id=T1-12"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 1",
+        "name": "Chili Pepper",
+        "img": "images/TH_T_Chilli_pepper_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-8"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 1",
+        "name": "Mutated Horsetail",
+        "img": "images/CP_T_Mutated_horsetail_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-11"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 1",
+        "name": "Coconut",
+        "img": "images/CR_T_Coconut_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-8"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 1",
+        "name": "Cat’s Claw Liana",
+        "img": "images/AM_T_%22Cat%27s_Claw%22_Liana.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-10"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 1",
+        "name": "Venus Fly Trap",
+        "img": "images/CP_T_Venus_flytrap_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-34"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 1",
+        "name": "Sea Grass",
+        "img": "images/Sea_Grass_icon.png",
+        "locationName": "Marina",
+        "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-8"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 2",
+        "name": "Toxic Branch",
+        "img": "images/CP_T_Toxic_branch_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-32"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 2",
+        "name": "Turtlegrass",
+        "img": "images/AU_T_Turtlegrass_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-21"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 2",
+        "name": "Stonebreaker Leaf",
+        "img": "images/AM_T_Stonebreaker_Leaf.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-24"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 2",
+        "name": "Eucalyptus Branch",
+        "img": "images/AU_T_Eucalyptus_branch_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-9"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 2",
+        "name": "Thistle",
+        "img": "images/SC_T_Thistle_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-35"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 2",
+        "name": "Sea Weed",
+        "img": "images/PI_T_Sea_weed_2.png",
+        "locationName": "Paradise Island",
+        "locationLink": "https://cloversalad.com/maps/paradise/items/?id=T1-11"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 2",
+        "name": "Banana Leaf",
+        "img": "images/TH_T_Banana_leaf_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-3"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 2",
+        "name": "Kakao",
+        "img": "images/AM_T_Kakao.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-18"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 2",
+        "name": "Balsa Timber",
+        "img": "images/AM_T_Balsa_Timber.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-3"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 2",
+        "name": "Old Branch",
+        "img": "images/GL_T_Old_branch_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-20"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 2",
+        "name": "Bamboo",
+        "img": "images/TH_T_Bamboo_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-2"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 2",
+        "name": "Mistletoe",
+        "img": "images/SC_T_Mistletoe_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-17"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Ship Artifacts",
+        "name": "Old Gold Coins",
+        "img": "images/AM_T_Old_Gold_Coins.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-27"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Ship Artifacts",
+        "name": "Sailing Rope",
+        "img": "images/Rope_Icon.png",
+        "locationName": "Marina",
+        "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-22"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Ship Artifacts",
+        "name": "Pirate Spyglass",
+        "img": "images/CR_T_Pirate_spyglass_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-20"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Ship Artifacts",
+        "name": "Bottle Santa Maria",
+        "img": "images/CR_T_Bottle_Santa_Maria_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-5"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Ship Artifacts",
+        "name": "Old Plank",
+        "img": "images/Old_Blank_icon.png",
+        "locationName": "Marina",
+        "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-3"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Ship Artifacts",
+        "name": "Steering Wheel",
+        "img": "images/Steering_Wheel_icon.png",
+        "locationName": "Marina",
+        "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-10"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Ship Artifacts",
+        "name": "Ship Bell",
+        "img": "images/CR_T_Ship_bell_from_Santa_Maria_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-23"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Ship Artifacts",
+        "name": "Anchor",
+        "img": "images/CR_T_Anchor_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-1"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Ship Artifacts",
+        "name": "Wooden Leg",
+        "img": "images/CR_T_Wooden_leg_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-31"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Ship Artifacts",
+        "name": "Steel Hook",
+        "img": "images/CR_T_Steel_hook_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-24"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Workshop Items",
+        "name": "Broken Fish Finder",
+        "img": "images/AL_T_Broken_fish_finder_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-2"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Workshop Items",
+        "name": "Snow Shovel",
+        "img": "images/AL_T_Snow_shovel_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-20"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Workshop Items",
+        "name": "Pipe Wrench",
+        "img": "images/CP_T_Pipe_wrench_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-18"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Workshop Items",
+        "name": "Pipe",
+        "img": "images/CP_T_Pipe_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-17"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Workshop Items",
+        "name": "Red Valve",
+        "img": "images/CP_T_Red_valve_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-23"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Workshop Items",
+        "name": "Fishing Line",
+        "img": "images/AL_T_Fishing_line_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-5"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Workshop Items",
+        "name": "Duct Tape",
+        "img": "images/GL_T_Duct_tape_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-13"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Workshop Items",
+        "name": "Lunch Box",
+        "img": "images/PI_T_Lunch_box_2.png",
+        "locationName": "Paradise Island",
+        "locationLink": "https://cloversalad.com/maps/paradise/items/?id=T1-16"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Workshop Items",
+        "name": "Hacksaw",
+        "img": "images/CP_T_Hacksaw_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-6"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Workshop Items",
+        "name": "Crowbar",
+        "img": "images/CP_T_Crowbar_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-3"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Common Garbage",
+        "name": "Plastic Bag",
+        "img": "images/PI_T_Plastic_bag_2.png",
+        "locationName": "Paradise Island",
+        "locationLink": "https://cloversalad.com/maps/paradise/items/?id=T1-2"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Common Garbage",
+        "name": "Styrofoam Bowl",
+        "img": "images/TH_T_Styrofoam_bowl_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-23"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Common Garbage",
+        "name": "Ninja Pizza Box",
+        "img": "images/CP_T_Ninja_Pizza_Box_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-12"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Stones",
+        "name": "Volcanic Rock",
+        "img": "images/CR_T_Volcanic_rock_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-27"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Stones",
+        "name": "Meteorite",
+        "img": "images/AL_T_Meteorite_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-17"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Stones",
+        "name": "Gold Nugget",
+        "img": "images/AL_T_Gold_nugget_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-11"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Stones",
+        "name": "Frozen Acorn",
+        "img": "images/AL_T_Frozen_acorn_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-7"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Stones",
+        "name": "Rock with Aboriginal Painting",
+        "img": "images/AU_T_Rock_with_Aboriginal_Painting_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-18"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Stones",
+        "name": "Massage Stone",
+        "img": "images/TH_T_Massage_stone_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-14"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Stones",
+        "name": "Radioactive Stone",
+        "img": "images/CP_T_Radioactive_stone_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-22"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Stones",
+        "name": "Glowing Crystal",
+        "img": "images/CP_T_Glowing_cristal_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-5"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Stones",
+        "name": "Grey Rock",
+        "img": "images/Grey_Rock_icon.png",
+        "locationName": "Marina",
+        "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-9"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Stones",
+        "name": "Uranophane",
+        "img": "images/NP_T_Uranophane_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb22"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Musical Instruments",
+        "name": "Brazil Drums",
+        "img": "images/AM_T_Brazil_Drums.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-7"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Musical Instruments",
+        "name": "Didgeridoo Flute",
+        "img": "images/AU_T_Didgeridoo_flute_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-29"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Musical Instruments",
+        "name": "Singing Bowl",
+        "img": "images/TH_T_Singing_bowl_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-22"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Musical Instruments",
+        "name": "Bag Pipes",
+        "img": "images/SC_T_Bag_pipes_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-2"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Musical Instruments",
+        "name": "Khong Wong Yai Stick",
+        "img": "images/TH_T_Kwong_wong_yai_stick_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-12"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Musical Instruments",
+        "name": "Chakhe",
+        "img": "images/TH_T_Chakhe_2.png",
+        "locationName": "Thailand",
+        "locationLink": "https://cloversalad.com/maps/thailand/items/?id=T7-7"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Musical Instruments",
+        "name": "Maracas",
+        "img": "images/AM_T_Maracas.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-19"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Cassette Tapes",
+        "name": "Grey Cassette",
+        "img": "images/GL_T_Grey_casette_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-17"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Cassette Tapes",
+        "name": "Blue Cassette",
+        "img": "images/AL_T_Blue_cassette_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-1"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Cassette Tapes",
+        "name": "Orange Cassette",
+        "img": "images/CR_T_Orange_cassette_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-16"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Vinyl Records",
+        "name": "Vinyl Record",
+        "img": "images/GL_T_Vinyl_record_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-29"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Vinyl Records",
+        "name": "Vinyl Record",
+        "img": "images/AL_T_Vinyl_record_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-26"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Vinyl Records",
+        "name": "Vinyl Record",
+        "img": "images/SC_T_Vinyl_Record.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-25"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Vinyl Records",
+        "name": "Watermelon Vinyl Record",
+        "img": "images/CR_T_Watermelon_vinyl_record_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-28"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Vinyl Records",
+        "name": "Bossa Nova Vinyl Record",
+        "img": "images/AM_T_Bossa_Nova_Vinyl_Record.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-5"
+    },
+    {
+        "floor": "Upstairs - Wood Bridge Extension",
+        "group": "Vinyl Records",
+        "name": "Vinyl Record",
+        "img": "images/AU_T_Vinyl_record_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-30"
+    },
+    {
+        "floor": "Upstairs - Whale Bone Bridge Extension",
+        "group": "Toys",
+        "name": "Rubber Crocodile",
+        "img": "images/CR_T_Rubber_crocodile_2.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-21"
+    },
+    {
+        "floor": "Upstairs - Whale Bone Bridge Extension",
+        "group": "Toys",
+        "name": "Old Tire",
+        "img": "images/GL_T_Old_tire_2.png",
+        "locationName": "Great Lakes",
+        "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-21"
+    },
+    {
+        "floor": "Upstairs - Whale Bone Bridge Extension",
+        "group": "Toys",
+        "name": "Innertube",
+        "img": "images/AL_T_Innertube_2.png",
+        "locationName": "Alaska",
+        "locationLink": "https://cloversalad.com/maps/alaska/items/?id=T4-15"
+    },
+    {
+        "floor": "Upstairs - Whale Bone Bridge Extension",
+        "group": "Toys",
+        "name": "Inflatable Flamingo",
+        "img": "images/CR_T_Inflatable_Flamingo.png",
+        "locationName": "Costa Rica",
+        "locationLink": "https://cloversalad.com/maps/costa-rica/items/?id=T3-13"
+    },
+    {
+        "floor": "Upstairs - Whale Bone Bridge Extension",
+        "group": "Toys",
+        "name": "Nessie Toy",
+        "img": "images/SC_T_Nessie_toy_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-30"
+    },
+    {
+        "floor": "Upstairs - Whale Bone Bridge Extension",
+        "group": "Toys",
+        "name": "Old Mini Yellow Submarine",
+        "img": "images/SC_T_Old_mini_yellow_submarine_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-31"
+    },
+    {
+        "floor": "Upstairs - Whale Bone Bridge Extension",
+        "group": "Toys",
+        "name": "Plastic “Dory” Fish",
+        "img": "images/AU_T_Plastic_dory_fish_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-17"
+    },
+    {
+        "floor": "Upstairs - Whale Bone Bridge Extension",
+        "group": "Toys",
+        "name": "Rubber Duck",
+        "img": "images/PI_T_Rubber_duck_2.png",
+        "locationName": "Paradise Island",
+        "locationLink": "https://cloversalad.com/maps/paradise/items/?id=T1-20"
+    },
+    {
+        "floor": "Upstairs - Whale Bone Bridge Extension",
+        "group": "Beach Chairs",
+        "name": "Brazil Hammock",
+        "img": "images/AM_T_Brazil_Hammock.png",
+        "locationName": "Amazon",
+        "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-8"
+    },
+    {
+        "floor": "Upstairs - Whale Bone Bridge Extension",
+        "group": "Beach Chairs",
+        "name": "Lawn Chair",
+        "img": "images/AU_T_Lawn_chair_2.png",
+        "locationName": "Australia",
+        "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-12"
+    },
+    {
+        "floor": "Underground",
+        "group": "Old Electronics",
+        "name": "Old Phone",
+        "img": "images/PI_T_Old_phone_2.png",
+        "locationName": "Paradise Island",
+        "locationLink": "https://cloversalad.com/maps/paradise/items/?id=T1-10"
+    },
+    {
+        "floor": "Underground",
+        "group": "Old Electronics",
+        "name": "Tourist Camera",
+        "img": "images/SC_T_Tourist_camera_2.png",
+        "locationName": "Scotland",
+        "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-28"
+    },
+    {
+        "floor": "Underground",
+        "group": "Home Appliances",
+        "name": "Heater",
+        "img": "images/CP_T_Heater_2.png",
+        "locationName": "Chemical Plant",
+        "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-7"
+    },
+    {
+        "floor": "Underground",
+        "group": "Home Appliances",
+        "name": "Vacuum Cleaner",
+        "img": "images/NP_T_Trash24_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb23"
+    },
+    {
+        "floor": "Underground",
+        "group": "Home Appliances",
+        "name": "Retro TV",
+        "img": "images/NP_T_Retro_TV_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb20"
+    },
+    {
+        "floor": "Underground",
+        "group": "Home Appliances",
+        "name": "Candy Dispenser",
+        "img": "images/NP_T_Candy_Dispenser_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb16"
+    },
+    {
+        "floor": "Underground",
+        "group": "Home Appliances",
+        "name": "Retro Washing Machine",
+        "img": "images/NP_T_Trash12_2.png",
+        "locationName": "Nuclear Plant",
+        "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb24"
+    }
+]

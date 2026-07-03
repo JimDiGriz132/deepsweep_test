@@ -1,0 +1,78 @@
+{
+  "current": "0.9.9a",
+  "changes": {
+  "0.9.9a:":[
+  	"New skins!"
+  ],
+  "0.9.9":[
+  	"Pictures are hosted locally now!"
+  ],
+  "0.9.8b":[
+  	"Updated location links"
+  ],
+	"0.9.8": [
+		"Broken location links changed to new CloverSalad links",
+		"Added new Australia trash",
+		"Added Nuclear Plant trash"
+	],
+	"0.9.7a": [
+		"Items with same names now save state correctly",
+		"New and working item location links",
+		"Export & Import buttons more visible",
+		"Glowing Missing Items button when in filtering mode",
+		"Small chages for better phone experience",
+		"A few style tweaks"
+	],
+	"0.9.6": [
+	  "Progress bar tweaks",
+	  "Neon style",
+	  "Welcome screen",
+	  "Backup and restore",
+	  "First Floor is now Ground Floor",
+	  "Search bar"
+	],
+	 
+	"0.9.5": [
+	  "Fixed bunch of names",
+	  "Changed location buttons from Wiki to CloverSalad",
+	  "Fixed location button clipping text on mobile",
+	  "Top bar change",
+	  "New progress bar",
+	  "Carp Diem Discor added"
+	],
+	"0.9": [
+	  "Fixed no data when installed",
+	  "Top bar polishing",
+	  "Menu button added",
+	  "Install button fix",
+	  "Awesome sites added"
+	],
+	"0.8.2": [
+	  "Service worker fix"
+	],
+	"0.8": [
+	  "PWA fix",
+	  "Tweaks"
+	],
+    "0.7": [
+	  "Version badge fix",
+	  "Location filter list fix",
+	  "Mobile view of item names fix",
+	  "Design change"
+	],
+	"0.6": [
+      "Fixed wrong item pictures and locations",
+	  "Fixed Missing Items filter- now hides all other locations",
+	  "Location filter change automaticly refreshes missing items shown",
+	  "Version badge with whats-new tooltip",
+      "Red dot indicating new version",
+	  "New Logo and Icons",
+	  "UX fixes and addons"
+    ],
+    "0.5": [
+      "Item location and map links",
+	  "Missing Items filter",
+      "UX fixes"
+    ]
+  }
+}
