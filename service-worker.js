@@ -9,8 +9,8 @@ const urlsToCache = [
   '/logo.png',
   '/icon-192.png',
   '/icon-512.png'
-  'workshop_bcg.png'
-  'toxic_bcg.png'
+  '/workshop_bcg.png'
+  '/toxic_bcg.png'
 ];
 
 self.addEventListener('install', event => {
