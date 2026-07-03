@@ -839,10 +839,36 @@ a.locationBtn {
   }
   
   .floor, .group > div, .item, .progress-container {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    background: rgba(20, 35, 60, 0.95) !important;
-  }
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Svaki element sada ispravno vuče pozadinu iz odabranog skina */
+.floor {
+  background: var(--floor-bg) !important;
+}
+
+.group > div {
+  background: rgba(255, 255, 255, 0.07) !important; /* Zadržava originalni prozirni štih grupe */
+}
+
+/* Ako je odabran Museum Workshop, na mobitelu dajemo grupi tamniju nijansu radi kontrasta */
+[data-theme="museum-workshop"] .group > div {
+  background: rgba(26, 15, 11, 0.95) !important;
+}
+
+[data-theme="neon-toxic"] .group > div {
+  background: rgba(13, 35, 21, 0.95) !important;
+}
+
+.item {
+  background: var(--card-bg) !important;
+}
+
+.progress-container {
+  background: rgba(18, 26, 29, 0.95) !important;
+}
+  
   
   #container {
     will-change: transform;
@@ -1356,7 +1382,7 @@ document.addEventListener('click', (e) => {
     installAlert.style.display = 'none';
   }
 });
-/*if ('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
     .then(reg => {
       console.log('Service Worker registered');
@@ -1364,7 +1390,7 @@ document.addEventListener('click', (e) => {
     })
     .catch(err => console.log('SW registration failed', err));
 }
-*/
+
 // --- LocalStorage helpers ---
 function loadState(){ return JSON.parse(localStorage.getItem('deepsweepState')||'{}'); }
 function saveState(state){ localStorage.setItem('deepsweepState', JSON.stringify(state)); }
@@ -1419,7 +1445,7 @@ if (fishContainer) {
 // --- Load JSON and build UI ---
 let state = loadState();
 
-fetch('data.json')
+fetch('/data.json')
   .then(res => res.json())
   .then(data => {
     buildUI(data);
@@ -1840,7 +1866,7 @@ document.getElementById('openUncheckedBtn').addEventListener('click', runMissing
 document.getElementById('locationFilter').addEventListener('change', refreshMissingItemsFilter);
 
 // ================= VERSION BADGE TOOLTIP =================
-fetch('version.json')
+fetch('/version.json')
   .then(res => res.json())
   .then(v => {
     const badge = document.getElementById('appVersion');
