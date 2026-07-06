@@ -65,6 +65,38 @@
     },
     {
         "floor": "Ground Floor",
+        "group": "Glasses",
+        "name": "Bebop's Shades",
+        "img": "images/Trash_BebopShades.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc02"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Glasses",
+        "name": "Nerd Glasses",
+        "img": "images/Trash_GeekGlasses.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc07"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Glasses",
+        "name": "3D Glasses",
+        "img": "images/Trash_Glasses3D.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-9"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Glasses",
+        "name": "Glasses",
+        "img": "images/Trash_Glasses.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-8"
+    },
+    {
+        "floor": "Ground Floor",
         "group": "Hats",
         "name": "Koala Hat",
         "img": "images/AU_T_Koala_hat_2.png",
@@ -169,6 +201,14 @@
     },
     {
         "floor": "Ground Floor",
+        "group": "Hats",
+        "name": "Aviator Cap",
+        "img": "images/Trash_AviatorCap.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-1"
+    },
+    {
+        "floor": "Ground Floor",
         "group": "Shells",
         "name": "Pearl",
         "img": "images/AU_T_Pearl_2.png",
@@ -265,11 +305,35 @@
     },
     {
         "floor": "Ground Floor",
+        "group": "Clothing",
+        "name": "Heart-shaped Necklace",
+        "img": "images/Trash_HeartNecklace.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-11"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Clothing",
+        "name": "Old Sock",
+        "img": "images/Trash_OldSock.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-14"
+    },
+    {
+        "floor": "Ground Floor",
         "group": "Gloves",
         "name": "Mouse Glove",
         "img": "images/GL_T_Mouse_glove_2.png",
         "locationName": "Great Lakes",
         "locationLink": "https://cloversalad.com/maps/great-lakes/items/?id=T2-31"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Gloves",
+        "name": "Winter Glove",
+        "img": "images/Trash_WinterGlove.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-24"
     },
     {
         "floor": "Ground Floor",
@@ -497,6 +561,22 @@
     },
     {
         "floor": "Ground Floor",
+        "group": "Antiques 2",
+        "name": "Sextant",
+        "img": "images/Trash_Sextant.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-17"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 2",
+        "name": "Golden Pocket Watch",
+        "img": "images/Trash_GoldPocketWatch.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-10"
+    },
+    {
+        "floor": "Ground Floor",
         "group": "Antiques 3",
         "name": "Old Fishing Net",
         "img": "images/TH_T_Old_fishing_net_2.png",
@@ -622,6 +702,14 @@
         "img": "images/PI_T_Mask_2.png",
         "locationName": "Paradise Island",
         "locationLink": "https://cloversalad.com/maps/paradise/items/?id=T1-3"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Antiques 4",
+        "name": "Wallet",
+        "img": "images/Trash_Wallet.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-21"
     },
     {
         "floor": "Ground Floor",
@@ -758,6 +846,14 @@
         "img": "images/NP_T_Hamburger_2.png",
         "locationName": "Nuclear Plant",
         "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb8"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Food 1",
+        "name": "Jar of Sand",
+        "img": "images/Trash_JarWithSand.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc11"
     },
     {
         "floor": "Ground Floor",
@@ -905,6 +1001,14 @@
     },
     {
         "floor": "Ground Floor",
+        "group": "Bottles",
+        "name": "Broken Bottle",
+        "img": "images/Trash_BrokenBottle.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc04"
+    },
+    {
+        "floor": "Ground Floor",
         "group": "Floppy Disks",
         "name": "Yellow Floppy Disk 5.25",
         "img": "images/CR_T_Yellow_floppy_disk_5.25_2.png",
@@ -985,6 +1089,14 @@
     },
     {
         "floor": "Ground Floor",
+        "group": "Floppy Disks",
+        "name": "FIN-MAN Floppy Disk",
+        "img": "images/Trash_FIN-MAN_FloppyDisk.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc06"
+    },
+    {
+        "floor": "Ground Floor",
         "group": "VHS Tapes",
         "name": "Video Cassette",
         "img": "images/GL_T_Video_cassette_2.png",
@@ -1006,6 +1118,22 @@
         "img": "images/NP_T_VHS_Tape_Mudmax_2.png",
         "locationName": "Nuclear Plant",
         "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb12"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "VHS Tapes",
+        "name": "Video Cassette",
+        "img": "images/Trash_TeethsVHS.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc21"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "VHS Tapes",
+        "name": "VHS “The Found Ones”",
+        "img": "images/Trash_FoundVHS.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-7"
     },
     {
         "floor": "Ground Floor",
@@ -1059,7 +1187,7 @@
         "floor": "Ground Floor",
         "group": "Library",
         "name": "Prof. Flux's Notes",
-        "img": "images/CP_T_Prof._Flux%27s_notes_2.png",
+        "img": "images/CP_T_Prof._Fluxs_notes_2.png",
         "locationName": "Chemical Plant",
         "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-19"
     },
@@ -1142,6 +1270,14 @@
         "img": "images/NP_T_Book_Understanding_ATOM_2.png",
         "locationName": "Nuclear Plant",
         "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb9"
+    },
+    {
+        "floor": "Ground Floor",
+        "group": "Library",
+        "name": "Research Notes",
+        "img": "images/Trash_ResearchNotes.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc18"
     },
     {
         "floor": "Ground Floor - Bridge Extension",
@@ -1371,9 +1507,33 @@
         "floor": "Ground Floor - Bridge Extension",
         "group": "Chests",
         "name": "Lunchbox",
-        "img": "images/latest?cb=20260221021034",
+        "img": "images/NP_T_Lunchbox_2.png",
         "locationName": "Nuclear Plant",
         "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb18"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Chests",
+        "name": "Old Safe",
+        "img": "images/Trash_TreasureChestSafe.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc23"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Chests",
+        "name": "Damaged Crate",
+        "img": "images/Trash_BrokenCrate.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc05"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Chests",
+        "name": "Suitcase",
+        "img": "images/Trash_Suitcase.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-18"
     },
     {
         "floor": "Ground Floor - Bridge Extension",
@@ -1457,6 +1617,22 @@
     },
     {
         "floor": "Ground Floor - Bridge Extension",
+        "group": "Keys",
+        "name": "Safe Code",
+        "img": "images/Trash_TreasureChestSafeKey.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc24"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Keys",
+        "name": "Suitcase Key",
+        "img": "images/Trash_SuitcaseKey.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-19"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
         "group": "Signs",
         "name": "High Radiation Sign",
         "img": "images/CP_T_High_radiation_sign_2.png",
@@ -1478,6 +1654,14 @@
         "img": "images/CP_T_Sign_2.png",
         "locationName": "Chemical Plant",
         "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-30"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Signs",
+        "name": "Sign",
+        "img": "images/Trash_HazardousSign.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc09"
     },
     {
         "floor": "Ground Floor - Bridge Extension",
@@ -1526,6 +1710,46 @@
         "img": "images/NP_T_Uramium_Container_2.png",
         "locationName": "Nuclear Plant",
         "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb21"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Laboratory 1",
+        "name": "Laboratory Glassware",
+        "img": "images/Trash_LaboratoryGlassware.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc12"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Laboratory 1",
+        "name": "Sludge",
+        "img": "images/Trash_Ooze",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc17"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Laboratory 1",
+        "name": "12V Battery",
+        "img": "images/Trash_Battery12V.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-2"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Laboratory 1",
+        "name": "Portable Toilet",
+        "img": "images/Trash_PortableToilet.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-15"
+    },
+    {
+        "floor": "Ground Floor - Bridge Extension",
+        "group": "Laboratory 1",
+        "name": "Magnet",
+        "img": "images/Trash_Magnesium.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-13"
     },
     {
         "floor": "Ground Floor - Bridge Extension",
@@ -1817,6 +2041,14 @@
     },
     {
         "floor": "Upstairs",
+        "group": "Barrels",
+        "name": "Leaky Canister",
+        "img": "images/Trash_LeakyFuelCanister.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc13"
+    },
+    {
+        "floor": "Upstairs",
         "group": "Flowers",
         "name": "Red Wild Plant",
         "img": "images/HI_Wild_plant_red_2.png",
@@ -1939,7 +2171,7 @@
         "floor": "Upstairs",
         "group": "Flora 1",
         "name": "Cat’s Claw Liana",
-        "img": "images/AM_T_%22Cat%27s_Claw%22_Liana.png",
+        "img": "images/AM_T_Cats_Claw_Liana.png",
         "locationName": "Amazon",
         "locationLink": "https://cloversalad.com/maps/amazon/items/?id=T8-10"
     },
@@ -1958,6 +2190,22 @@
         "img": "images/Sea_Grass_icon.png",
         "locationName": "Marina",
         "locationLink": "https://cloversalad.com/maps/marina/items/?id=T0-8"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 1",
+        "name": "Tomato Seedling",
+        "img": "images/Trash_TomatoSeedling.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc22"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Flora 1",
+        "name": "Black Water Lily",
+        "img": "images/Trash_NymphaeaBlackPrincess.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc14"
     },
     {
         "floor": "Upstairs",
@@ -2217,6 +2465,22 @@
     },
     {
         "floor": "Upstairs",
+        "group": "Workshop Items",
+        "name": "Hairspray",
+        "img": "images/Trash_HairSpray.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc08"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Workshop Items",
+        "name": "Toilet Brush",
+        "img": "images/Trash_WCBrush.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-23"
+    },
+    {
+        "floor": "Upstairs",
         "group": "Common Garbage",
         "name": "Plastic Bag",
         "img": "images/PI_T_Plastic_bag_2.png",
@@ -2238,6 +2502,14 @@
         "img": "images/CP_T_Ninja_Pizza_Box_2.png",
         "locationName": "Chemical Plant",
         "locationLink": "https://cloversalad.com/maps/chemical-plant/items/?id=T9-12"
+    },
+    {
+        "floor": "Upstairs",
+        "group": "Common Garbage",
+        "name": "Four-pack Holder",
+        "img": "images/Trash_4PackCanHolder.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc01"
     },
     {
         "floor": "Upstairs - Wood Bridge Extension",
@@ -2449,6 +2721,14 @@
     },
     {
         "floor": "Upstairs - Whale Bone Bridge Extension",
+        "group": "Chairs",
+        "name": "Chair",
+        "img": "images/Trash_Chair.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-5"
+    },
+    {
+        "floor": "Upstairs - Whale Bone Bridge Extension",
         "group": "Toys",
         "name": "Rubber Crocodile",
         "img": "images/CR_T_Rubber_crocodile_2.png",
@@ -2513,6 +2793,22 @@
     },
     {
         "floor": "Upstairs - Whale Bone Bridge Extension",
+        "group": "Toys",
+        "name": "Rubber Toy",
+        "img": "images/Trash_RubberToy.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-16"
+    },
+    {
+        "floor": "Upstairs - Whale Bone Bridge Extension",
+        "group": "Toys",
+        "name": "Toy Dinosaur",
+        "img": "images/Trash_DinoToy.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-6"
+    },
+    {
+        "floor": "Upstairs - Whale Bone Bridge Extension",
         "group": "Beach Chairs",
         "name": "Brazil Hammock",
         "img": "images/AM_T_Brazil_Hammock.png",
@@ -2526,6 +2822,14 @@
         "img": "images/AU_T_Lawn_chair_2.png",
         "locationName": "Australia",
         "locationLink": "https://cloversalad.com/maps/australia/items/?id=T5-12"
+    },
+    {
+        "floor": "Upstairs - Whale Bone Bridge Extension",
+        "group": "Beach Chairs",
+        "name": "Lifebuoy",
+        "img": "images/Trash_Lifebuoy.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-12"
     },
     {
         "floor": "Underground",
@@ -2542,6 +2846,70 @@
         "img": "images/SC_T_Tourist_camera_2.png",
         "locationName": "Scotland",
         "locationLink": "https://cloversalad.com/maps/scotland/items/?id=T6-28"
+    },
+    {
+        "floor": "Underground",
+        "group": "Old Electronics",
+        "name": "Walkman",
+        "img": "images/Trash_Walkman.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc26"
+    },
+    {
+        "floor": "Underground",
+        "group": "Old Electronics",
+        "name": "Pager",
+        "img": "images/Trash_Beeper.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc03"
+    },
+    {
+        "floor": "Underground",
+        "group": "Old Electronics",
+        "name": "Telephone",
+        "img": "images/Trash_OldCellPhone.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc15"
+    },
+    {
+        "floor": "Underground",
+        "group": "Old Electronics",
+        "name": "Tamagotchi",
+        "img": "images/Trash_Tamagotchi.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc20"
+    },
+    {
+        "floor": "Underground",
+        "group": "Old Electronics",
+        "name": "Headphones",
+        "img": "images/Trash_Headphones.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc10"
+    },
+    {
+        "floor": "Underground",
+        "group": "Old Electronics",
+        "name": "Sail&Fish Console",
+        "img": "images/Trash_SailFishHandheldConsole.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc19"
+    },
+    {
+        "floor": "Underground",
+        "group": "Old Electronics",
+        "name": "TV Remote",
+        "img": "images/Trash_TVRemote.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-20"
+    },
+    {
+        "floor": "Underground",
+        "group": "Old Electronics",
+        "name": "Car Keys",
+        "img": "images/Trash_CarKeys.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-4"
     },
     {
         "floor": "Underground",
@@ -2582,5 +2950,37 @@
         "img": "images/NP_T_Trash12_2.png",
         "locationName": "Nuclear Plant",
         "locationLink": "https://cloversalad.com/maps/nuclear-plant/items/?id=tb24"
+    },
+    {
+        "floor": "Underground",
+        "group": "Home Appliances",
+        "name": "Television",
+        "img": "images/Trash_TV90s.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc25"
+    },
+    {
+        "floor": "Underground",
+        "group": "Home Appliances",
+        "name": "Old Radiator",
+        "img": "images/Trash_OldRadiator.png",
+        "locationName": "Petrochemical",
+        "locationLink": "https://cloversalad.com/maps/petrochemical/items/?id=tc16"
+    },
+    {
+        "floor": "Underground",
+        "group": "Home Appliances",
+        "name": "Old Washing Machine",
+        "img": "images/Trash_WashingMachine80s.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-22"
+    },
+    {
+        "floor": "Underground",
+        "group": "Home Appliances",
+        "name": "Damaged CRT Monitor",
+        "img": "images/Trash_BrokenMonitorCRT.png",
+        "locationName": "Bermuda Triangle",
+        "locationLink": "https://cloversalad.com/maps/bermuda-triangle/items/?id=DT-3"
     }
 ]

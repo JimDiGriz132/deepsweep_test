@@ -602,11 +602,11 @@ padding: 0 12px;
 #counter {
   text-align: center;
   font-size: 1.3em;
-  color: #004080;
+  color: var(--text-color);
   font-weight: 600;
   margin: 20px auto;
   padding: 12px 20px;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--floor-bg);
   border-radius: 16px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   max-width: 320px;
@@ -780,11 +780,10 @@ a.locationBtn {
 
 /* Phone */
 @media (max-width: 640px) {
-
-	body {
+body {
     background-attachment: scroll !important;
     background-size: cover;
-	background-blend-mode: hard-light !important;
+    background-blend-mode: hard-light; !important;
   }
 
   .floor, .group > div, .item, .progress-container {
@@ -798,7 +797,7 @@ a.locationBtn {
 
   [data-theme="museum-workshop"] .group > div { background: rgba(26, 15, 11, 0.95) !important; }
   [data-theme="neon-toxic"] .group > div { background: rgba(13, 35, 21, 0.95) !important; }
-		
+
   .item > div {
     flex-direction: column;
     align-items: flex-start;
@@ -887,7 +886,7 @@ a.locationBtn {
 .progress-container {
   background: rgba(18, 26, 29, 0.95) !important;
 }
-  
+
   
   #container {
     will-change: transform;
@@ -1401,7 +1400,7 @@ document.addEventListener('click', (e) => {
     installAlert.style.display = 'none';
   }
 });
-/*if ('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
     .then(reg => {
       console.log('Service Worker registered');
@@ -1409,7 +1408,7 @@ document.addEventListener('click', (e) => {
     })
     .catch(err => console.log('SW registration failed', err));
 }
-*/
+
 // --- LocalStorage helpers ---
 function loadState(){ return JSON.parse(localStorage.getItem('deepsweepState')||'{}'); }
 function saveState(state){ localStorage.setItem('deepsweepState', JSON.stringify(state)); }
@@ -1464,7 +1463,7 @@ if (fishContainer) {
 // --- Load JSON and build UI ---
 let state = loadState();
 
-fetch('data.json')
+fetch('/data.json')
   .then(res => res.json())
   .then(data => {
     buildUI(data);
@@ -1482,9 +1481,11 @@ fetch('data.json')
       "Scotland",
       "Thailand",
       "Amazon",
-	  "Marina",
-	  "Chemical Plant",
-	  "Nuclear Plant"
+	    "Marina",
+	    "Chemical Plant",
+	    "Nuclear Plant",
+      "Petrochemical",
+      "Bermuda Triangle"
     ];
 
     const locationFilter = document.getElementById('locationFilter');
@@ -1885,7 +1886,7 @@ document.getElementById('openUncheckedBtn').addEventListener('click', runMissing
 document.getElementById('locationFilter').addEventListener('change', refreshMissingItemsFilter);
 
 // ================= VERSION BADGE TOOLTIP =================
-fetch('version.json')
+fetch('/version.json')
   .then(res => res.json())
   .then(v => {
     const badge = document.getElementById('appVersion');

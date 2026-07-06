@@ -1,6 +1,9 @@
 {
-  "current": "0.9.9a",
+  "current": "1.0",
   "changes": {
+  "1.0":[
+  	"Petrochemichal & Bermuda Triangle locations added"
+  ],
   "0.9.9a":[
   	"New skins!"
   ],
