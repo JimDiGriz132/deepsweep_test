@@ -97,9 +97,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7); 
-  backdrop-filter: blur(8px); 
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.82); 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -463,6 +461,10 @@ body {
   width: 260px; 
   padding: 8px 0;
   transition: all 0.3s ease;
+  max-height: calc(100vh - 90px);
+  max-height: calc(100dvh - 90px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .menu-dropdown ul {
@@ -624,14 +626,11 @@ padding: 0 12px;
 /* ===== FLOORS, GROUPS, ITEMS ===== */
 .floor, .group > div, .item {
   background: var(--card-bg) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   margin-bottom: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
-  will-change: transform, opacity;
+  transition: transform 0.2s, background 0.2s, border-color 0.2s;
 }
 
 
@@ -667,21 +666,19 @@ padding: 0 12px;
 /* Group wrapper */
 .group > div {
   
-  background: rgba(255, 255, 255, 0.07) !important; 
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.09) !important; 
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 10px 14px;
   margin: 6px 0;
   margin-left: 5px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 .group > div:hover {
   
-  background: rgba(255, 255, 255, 0.12) !important;
+  background: rgba(255, 255, 255, 0.14) !important;
   border-color: rgba(0, 242, 254, 0.3);
 }
 
@@ -780,8 +777,8 @@ a.locationBtn {
 }
 
 
-/* Phone */
-@media (max-width: 640px) {
+/* Phone (portrait width OR short landscape height) */
+@media (max-width: 640px), (max-height: 500px) and (orientation: landscape) {
 body {
     background-attachment: scroll !important;
     background-size: cover;
@@ -1216,7 +1213,7 @@ a.menu-item-btn * {
   pointer-events: none;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 640px), (max-height: 500px) and (orientation: landscape) {
   .map-overlay-inner img {
     /* >>> OVDJE MIJENJAŠ VELIČINU MAPE NA MOBITELU <<<
        ovo je zasebna vrijednost od desktopa jer je mobitel puno uži ekran,
@@ -1596,7 +1593,7 @@ if (fishContainer) {
 // --- Load JSON and build UI ---
 let state = loadState();
 
-fetch('data.json')
+fetch('/data.json')
   .then(res => res.json())
   .then(data => {
     buildUI(data);
@@ -2019,7 +2016,7 @@ document.getElementById('openUncheckedBtn').addEventListener('click', runMissing
 document.getElementById('locationFilter').addEventListener('change', refreshMissingItemsFilter);
 
 // ================= VERSION BADGE TOOLTIP =================
-fetch(' version.json')
+fetch('/version.json')
   .then(res => res.json())
   .then(v => {
     const badge = document.getElementById('appVersion');
