@@ -13,7 +13,7 @@
   --main-accent: #00f2fe;
   --target-color: #ffd700;
   --floor-bg: linear-gradient(135deg, rgba(16, 33, 62, 0.8), rgba(15, 52, 96, 0.8));
-  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-bg: rgba(25, 48, 88, 0.04);
   --card-hover: linear-gradient(135deg, rgba(25, 48, 88, 0.9), rgba(20, 65, 120, 0.9));
   --text-color: #ffffff;
   --btn-bg: linear-gradient(90deg, #4facfe, #00f2fe);
@@ -27,8 +27,8 @@
   --main-accent: #39ff14;
   --target-color: #ff007f;
   --floor-bg: linear-gradient(135deg, rgba(13, 35, 21, 0.8), rgba(7, 45, 23, 0.8));
-  --card-bg: rgba(57, 255, 20, 0.05);
-  --card-hover: linear-gradient(135deg, rgba(20, 55, 30, 0.9), rgba(15, 75, 35, 0.9));
+  --card-bg: rgba(57, 255, 20, 0.04);
+  --card-hover: linear-gradient(135deg, rgba(57, 255, 20, 0.09), rgba(57, 255, 20, 0.06));
   --text-color: #e0ffe0;
   --btn-bg: linear-gradient(90deg, #1b4d22, #39ff14);
   --btn-hover-bg: linear-gradient(90deg, #246b2f, #54ff38);
@@ -67,8 +67,8 @@
   --main-accent: #e5d3b3; 
   --target-color: #8c3e2b; 
   --floor-bg: linear-gradient(135deg, rgba(229, 211, 179, 0.15) 0%, rgba(210, 190, 155, 0.15) 100%);
-  --card-bg: rgba(255, 255, 255, 0.03);
-  --card-hover: linear-gradient(135deg, rgba(140, 62, 43, 0.3) 0%, rgba(46, 28, 22, 0.5) 100%);
+  --card-bg: rgba(229, 211, 179, 0.03);
+  --card-hover: linear-gradient(135deg, rgba(229, 211, 179, 0.08), rgba(229, 211, 179, 0.05));
   --text-color: #f7ebd3;
   --btn-bg: linear-gradient(90deg, #5c2c20, #8c3e2b);
   --btn-hover-bg: linear-gradient(90deg, #733728, #a64f3b);
@@ -560,9 +560,9 @@ padding: 0 12px;
 /* Popup style */
 .fish-popup {
   position: absolute;
-  bottom: 40px; /* Pozicija iznad ribe */
+  top: 40px; /* Pozicija ispod ribe */
   left: 50%;
-  transform: translateX(-50%) translateY(10px);
+  transform: translateX(-50%) translateY(-10px);
   background: #ffd700; /* Žuta boja kao meta */
   color: #000;
   padding: 4px 12px;
@@ -580,12 +580,12 @@ padding: 0 12px;
 .fish-popup::after {
     content: '';
     position: absolute;
-    top: 100%;
+    bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
     border-width: 6px;
     border-style: solid;
-    border-color: #ffd700 transparent transparent transparent;
+    border-color: transparent transparent #ffd700 transparent;
 }
 
 /* Hover (PC) & active class (Mobile) */
@@ -630,12 +630,14 @@ padding: 0 12px;
   border-radius: 15px;
   margin-bottom: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+  will-change: transform, opacity;
 }
+
 
 .floor:hover, .item:hover {
   background: var(--card-hover) !important;
-  box-shadow: 0 0 20px var(--main-accent);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .floor-name, .group-name, .item-name {
@@ -802,9 +804,9 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
-	justify-content: center; 
+  justify-content: center; 
     min-height: 100px;
-	padding: 6px 4px 6px 4px;
+  padding: 6px 4px 6px 4px;
   }
 
   .item label {
@@ -818,20 +820,20 @@ body {
   
   a.locationBtn {
     font-weight: 400;
-	text-align: center;
+  text-align: center;
     margin-left: 0;
     align-self: flex-start;
-	margin-left: 32px;
+  margin-left: 32px;
     width: 170px;
 
-	box-sizing: border-box;
-	white-space: nowrap;
+  box-sizing: border-box;
+  white-space: nowrap;
   }
   
   .floor > div {
       display: flex;
       align-items: center; 
-	  gap: 5px;
+    gap: 5px;
   }
   .floor b, .floor span { 
       font-size: 13px !important; 
@@ -901,7 +903,7 @@ body {
 .item img,
 .item .first-row img {
   height: 40px; 
-  width: auto;
+  width: 40px;
   object-fit: contain;
 
 }
@@ -1113,6 +1115,126 @@ a.menu-item-btn * {
 }
 
 
+/* ===== MUSEUM MAP OVERLAY ===== */
+.map-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 25000; /* iznad welcome overlaya */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.map-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.map-overlay-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  touch-action: pan-x pan-y pinch-zoom;
+  overscroll-behavior: contain;
+}
+
+.map-overlay-inner img {
+  display: block;
+  max-width: none;
+  width: auto;
+  /* >>> OVDJE MIJENJAŠ VELIČINU MAPE NA DESKTOPU (PC) <<<
+     100vh = puna visina ekrana (bilo prevelika/prezumirana)
+     smanji postotak da smanjiš mapu, npr. 55vh, 45vh... */
+  height: 55vh;
+  margin: auto;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none; /* image never intercepts the close tap */
+}
+
+.map-close-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 25001;
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  min-height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-size: 20px;
+  line-height: 1;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.map-close-btn:hover {
+  background: var(--btn-hover-bg);
+}
+
+.map-close-btn:active {
+  transform: scale(0.9);
+}
+
+.map-hint {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 25001;
+  font-size: 11px;
+  color: var(--btn-text);
+  background: var(--btn-bg);
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .map-overlay-inner img {
+    /* >>> OVDJE MIJENJAŠ VELIČINU MAPE NA MOBITELU <<<
+       ovo je zasebna vrijednost od desktopa jer je mobitel puno uži ekran,
+       smanji postotak da smanjiš mapu, npr. 30vh, 25vh... */
+    height: 30vh;
+  }
+
+  .map-close-btn {
+    top: max(12px, env(safe-area-inset-top));
+    right: max(12px, env(safe-area-inset-right));
+  }
+
+  .map-hint {
+    bottom: max(14px, env(safe-area-inset-bottom));
+    font-size: 10px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1125,12 +1247,22 @@ a.menu-item-btn * {
       <ul>
         <li><strong>Progress Storage:</strong> Your data is saved <strong>locally</strong> in your browser's storage.</li>
         <li><strong>Warning:</strong> Clearing your browser cache or "Website Data" will <strong>permanently delete</strong> all your progress!</li>
-		<li><strong>Export</strong> makes a backup file of your trash collection, <strong>Import</strong> restores from created file.</li>
+        <li><strong>Export</strong> makes a backup file of your trash collection, <strong>Import</strong> restores from created file.</li>
+        <li><strong>Map</strong> shows the full museum layout — tap the <strong>MAP</strong> button, and tap anywhere on the map (or the X) to close it.</li>
         <li><strong>What's New:</strong> Tap the version number in the top right corner to see recent updates and changes.</li>
       </ul>
     </div>
     <button id="closeWelcomeBtn" class="menu-item-btn">Got it, let's go!</button>
   </div>
+</div>
+
+<!-- MUSEUM MAP OVERLAY -->
+<div id="mapOverlay" class="map-overlay">
+  <button id="mapCloseBtn" class="map-close-btn" aria-label="Close map">&times;</button>
+  <div class="map-overlay-inner" id="mapOverlayInner">
+    <img src="museum_map.png" alt="Museum map" draggable="false">
+  </div>
+  <div class="map-hint">Tap anywhere to close • scroll to pan</div>
 </div>
 
 <!-- TOP BAR -->
@@ -1154,6 +1286,7 @@ a.menu-item-btn * {
   </div>
 
 <div class="header-right-area">
+    <button class="version-style-btn" id="mapBtn">MAP</button>
     <button class="version-style-btn" id="exportBtn">EXPORT</button>
     <button class="version-style-btn" id="importBtn">IMPORT</button>
     <div id="appVersion"></div> <input type="file" id="importFile" style="display:none" accept=".json">
@@ -1463,7 +1596,7 @@ if (fishContainer) {
 // --- Load JSON and build UI ---
 let state = loadState();
 
-fetch('data.json')
+fetch('/data.json')
   .then(res => res.json())
   .then(data => {
     buildUI(data);
@@ -1481,9 +1614,9 @@ fetch('data.json')
       "Scotland",
       "Thailand",
       "Amazon",
-	    "Marina",
-	    "Chemical Plant",
-	    "Nuclear Plant",
+      "Marina",
+      "Chemical Plant",
+      "Nuclear Plant",
       "Petrochemical",
       "Bermuda Triangle"
     ];
@@ -1943,7 +2076,7 @@ fetch('/version.json')
       document.body.appendChild(tooltip);
 
       const rect = badge.getBoundingClientRect();
-	  tooltip.style.top = (rect.bottom + window.scrollY + 8) + 'px';
+    tooltip.style.top = (rect.bottom + window.scrollY + 8) + 'px';
 
       let left = rect.left + window.scrollX;
       const tooltipWidth = tooltip.offsetWidth;
@@ -2174,6 +2307,52 @@ document.addEventListener('DOMContentLoaded', () => {
                 importFile.value = '';
             };
             reader.readAsText(file);
+        });
+    }
+
+    // --- MUSEUM MAP OVERLAY ---
+    const mapBtn = document.getElementById('mapBtn');
+    const mapOverlay = document.getElementById('mapOverlay');
+    const mapCloseBtn = document.getElementById('mapCloseBtn');
+    const mapOverlayInner = document.getElementById('mapOverlayInner');
+
+    // Scroll kotačićem miša (PC) -> pretvara vertikalni scroll u horizontalni pan mape
+    if (mapOverlayInner) {
+        mapOverlayInner.addEventListener('wheel', (e) => {
+            if (mapOverlayInner.scrollWidth > mapOverlayInner.clientWidth) {
+                e.preventDefault();
+                mapOverlayInner.scrollLeft += e.deltaY;
+            }
+        }, { passive: false });
+    }
+
+    function openMap() {
+        if (!mapOverlay) return;
+        mapOverlay.classList.add('show');
+        document.body.style.overflow = 'hidden'; // spriječi scroll pozadine dok je mapa otvorena
+    }
+
+    function closeMap() {
+        if (!mapOverlay) return;
+        mapOverlay.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+
+    if (mapBtn && mapOverlay) {
+        mapBtn.addEventListener('click', openMap);
+        mapCloseBtn.addEventListener('click', closeMap);
+
+        // Klik/tap bilo gdje na overlay (uključujući preko slike, jer slika ima pointer-events: none) zatvara mapu
+        mapOverlay.addEventListener('click', (e) => {
+            if (e.target === mapCloseBtn) return;
+            closeMap();
+        });
+
+        // Escape zatvara mapu (desktop)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mapOverlay.classList.contains('show')) {
+                closeMap();
+            }
         });
     }
 });
