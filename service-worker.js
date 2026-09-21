@@ -1,7 +1,7 @@
-const CACHE_NAME = 'deepsweep-cache-v1.3';  // ← promijeni verziju kad mijenjaš fajlove!
+const CACHE_NAME = 'deepsweep-cache-v1.3a';  // ← promijeni verziju kad mijenjaš fajlove (nije više nužno, vidi network-first ispod)
 
 const urlsToCache = [
-  '/', 
+  '/',
   '/index.html',
   '/manifest.json',
   '/data.json',
@@ -14,16 +14,22 @@ const urlsToCache = [
   '/museum_map.png'
 ];
 
+// Datoteke koje se MORAJU uvijek dohvatiti svježe s mreže (cache je samo za offline)
+const NETWORK_FIRST = ['/', '/index.html', '/version.json', '/data.json', '/manifest.json'];
+
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        console.log('[SW] Caching files...');
-        return cache.addAll(urlsToCache)
-          .then(() => console.log('[SW] All files cached successfully'))
-          .catch(err => console.error('[SW] Cache addAll failed:', err));
-      })
-      .catch(err => console.error('[SW] Cache open failed:', err))
+    caches.open(CACHE_NAME).then(cache =>
+      Promise.all(
+        urlsToCache.map(url =>
+          // cache: 'reload' zaobilazi HTTP cache preglednika, inače se u novi cache
+          // može spremiti STARA verzija datoteke (uzrok povratka na v1.2)
+          fetch(new Request(url, { cache: 'reload' }))
+            .then(res => (res && res.ok) ? cache.put(url, res) : null)
+            .catch(err => console.warn('[SW] Could not cache', url, err))
+        )
+      )
+    )
   );
 
   self.skipWaiting();
@@ -31,59 +37,58 @@ self.addEventListener('install', event => {
 
 self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.filter(name => name !== CACHE_NAME)
-          .map(name => {
-            console.log('[SW] Deleting old cache:', name);
-            return caches.delete(name);
-          })
-      );
-    })
+    caches.keys().then(cacheNames =>
+      Promise.all(
+        cacheNames.filter(name => name !== CACHE_NAME).map(name => caches.delete(name))
+      )
+    )
   );
 
   self.clients.claim();
 });
 
 self.addEventListener('fetch', event => {
-  const url = new URL(event.request.url);
+  const req = event.request;
+  if (req.method !== 'GET') return;
 
+  const url = new URL(req.url);
+  if (url.origin !== self.location.origin) return;
 
-  if (url.origin !== self.location.origin) {
-    event.respondWith(fetch(event.request));
+  const isNavigation = req.mode === 'navigate';
+  const isCritical = isNavigation || NETWORK_FIRST.includes(url.pathname);
+
+  if (isCritical) {
+    // NETWORK-FIRST: uvijek pokušaj svježu verziju, cache samo kad nema mreže
+    const cacheKey = isNavigation ? '/index.html' : url.pathname;
+
+    event.respondWith(
+      fetch(req, { cache: 'no-cache' })
+        .then(res => {
+          if (res && res.status === 200) {
+            const copy = res.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(cacheKey, copy));
+          }
+          return res;
+        })
+        .catch(() =>
+          caches.match(cacheKey).then(cached => cached || caches.match('/') || Response.error())
+        )
+    );
     return;
   }
 
+  // CACHE-FIRST za slike i ostalo (rijetko se mijenja)
   event.respondWith(
-    caches.match(event.request)
-      .then(cachedResponse => {
-        if (cachedResponse) {
-          console.log('[SW] Serving from cache:', event.request.url);
-          return cachedResponse;
+    caches.match(req).then(cached => {
+      if (cached) return cached;
+
+      return fetch(req).then(res => {
+        if (res && res.status === 200) {
+          const copy = res.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(req, copy));
         }
-
-        return fetch(event.request)
-          .then(networkResponse => {
-            
-            if (!networkResponse || networkResponse.status !== 200 || event.request.method !== 'GET') {
-              return networkResponse;
-            }
-
-            
-            const responseToCache = networkResponse.clone();
-            caches.open(CACHE_NAME)
-              .then(cache => {
-                cache.put(event.request, responseToCache);
-                console.log('[SW] Cached on fetch:', event.request.url);
-              });
-
-            return networkResponse;
-          })
-          .catch(() => {
-            
-            console.log('[SW] Fetch failed, no cache:', event.request.url);
-            
-          });
-      })
+        return res;
+      });
+    })
   );
 });

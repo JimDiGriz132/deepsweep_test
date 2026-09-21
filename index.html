@@ -1630,7 +1630,7 @@ if (fishContainer) {
 // --- Load JSON and build UI ---
 let state = loadState();
 
-fetch('data.json')
+fetch('/data.json')
   .then(res => res.json())
   .then(data => {
     buildUI(data);
@@ -2053,7 +2053,7 @@ document.getElementById('openUncheckedBtn').addEventListener('click', runMissing
 document.getElementById('locationFilter').addEventListener('change', refreshMissingItemsFilter);
 
 // ================= VERSION BADGE TOOLTIP =================
-fetch('version.json')
+fetch('/version.json')
   .then(res => res.json())
   .then(v => {
     const badge = document.getElementById('appVersion');
@@ -2310,16 +2310,23 @@ document.addEventListener('DOMContentLoaded', () => {
                         const rawLocations = [
                             "Paradise Island", "Great Lakes", "Costa Rica", "Alaska", 
                             "Australia", "Scotland", "Thailand", "Amazon", 
-                            "Marina", "Chemical Plant", "Nuclear Plant"
+                            "Marina", "Chemical Plant", "Nuclear Plant",
+                            "Petrochemical", "Bermuda Triangle"
                         ];
 
                         const validSuffixes = rawLocations.map(loc => "_" + loc.replace(/\s/g, '_'));
+
+                        // Dodatna zaštita: uvijek zadrži ključeve koji odgovaraju itemima koji trenutno postoje u aplikaciji,
+                        // pa novi lokaliteti više ne ispadaju iz importa čak i ako se zaborave dodati u popis iznad
+                        const knownIds = new Set(
+                            Array.from(document.querySelectorAll('.item input[type="checkbox"]')).map(cb => cb.id)
+                        );
 
                         Object.keys(importedData).forEach(key => {
                             const isStructure = key.startsWith('group_') || key.startsWith('floor_');
                             const hasValidLocation = validSuffixes.some(suffix => key.endsWith(suffix));
 
-                            if (isStructure || hasValidLocation) {
+                            if (isStructure || hasValidLocation || knownIds.has(key)) {
                                 cleanedData[key] = importedData[key];
                             }
                         });
