@@ -3,7 +3,9 @@
   "changes": {
   "1.3":[
   	"Reduced GPU load to fix coil whine on desktop during hover",
-  	"Fixed dropdown/expandable menu rendering on mobile landscape"
+  	"Fixed dropdown/expandable menu rendering on mobile landscape",
+  	"Map now opens centered instead of from the left edge",
+  	"Fixed welcome screen on phones: instructions scroll and the \"Got it\" button is always reachable"
   ],
   "1.2":[
   	"Museum map added — tap MAP for a full-screen, scrollable view of the layout"

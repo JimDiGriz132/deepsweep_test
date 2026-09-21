@@ -1232,6 +1232,43 @@ a.menu-item-btn * {
   }
 }
 
+
+/* ===== WELCOME OVERLAY: siguran prikaz na malim ekranima / zoomu (iPhone) ===== */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+.welcome-overlay {
+  box-sizing: border-box;
+  padding: max(12px, env(safe-area-inset-top)) 12px max(12px, env(safe-area-inset-bottom));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.welcome-content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 20px;
+  /* nikad viši od ekrana; tekst se skrola, gumb ostaje uvijek vidljiv */
+  max-height: calc(100vh - 24px);
+  max-height: calc(100dvh - 24px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+}
+
+.welcome-content h2 { flex: 0 0 auto; }
+
+.welcome-content .instructions {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 12px 0;
+  padding-right: 4px;
+}
+
+.welcome-content #closeWelcomeBtn {
+  flex: 0 0 auto;
+  padding: 12px 0;
+}
 </style>
 </head>
 <body>
@@ -1593,7 +1630,7 @@ if (fishContainer) {
 // --- Load JSON and build UI ---
 let state = loadState();
 
-fetch('data.json')
+fetch('/data.json')
   .then(res => res.json())
   .then(data => {
     buildUI(data);
@@ -2016,7 +2053,7 @@ document.getElementById('openUncheckedBtn').addEventListener('click', runMissing
 document.getElementById('locationFilter').addEventListener('change', refreshMissingItemsFilter);
 
 // ================= VERSION BADGE TOOLTIP =================
-fetch('version.json')
+fetch('/version.json')
   .then(res => res.json())
   .then(v => {
     const badge = document.getElementById('appVersion');
@@ -2323,10 +2360,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: false });
     }
 
+    // Centriraj prikaz mape (horizontalno i vertikalno) umjesto da počne od lijevog ruba
+    function centerMap() {
+        if (!mapOverlayInner) return;
+        mapOverlayInner.scrollLeft = (mapOverlayInner.scrollWidth - mapOverlayInner.clientWidth) / 2;
+        mapOverlayInner.scrollTop = (mapOverlayInner.scrollHeight - mapOverlayInner.clientHeight) / 2;
+    }
+
     function openMap() {
         if (!mapOverlay) return;
         mapOverlay.classList.add('show');
         document.body.style.overflow = 'hidden'; // spriječi scroll pozadine dok je mapa otvorena
+        centerMap();
+        // ako se slika još nije učitala (prvo otvaranje), centriraj čim se učita
+        const mapImg = mapOverlayInner && mapOverlayInner.querySelector('img');
+        if (mapImg && !mapImg.complete) {
+            mapImg.addEventListener('load', centerMap, { once: true });
+        }
     }
 
     function closeMap() {
