@@ -1,6 +1,11 @@
 {
-  "current": "1.3a",
+  "current": "1.4",
   "changes": {
+  "1.4":[
+  	"Fixed fish counter popup being cut off at the screen edge when near 100%",
+  	"Added scrollable Version History popup (accessible from the version tooltip)",
+  	"A little surprise for completionists"
+  ],
   "1.3a":[
   	"Reduced GPU load to fix coil whine on desktop during hover",
   	"Fixed dropdown/expandable menu rendering on mobile landscape",
@@ -55,8 +60,7 @@
 	  "Changed location buttons from Wiki to CloverSalad",
 	  "Fixed location button clipping text on mobile",
 	  "Top bar change",
-	  "New progress bar",
-	  "Carp Diem Discor added"
+	  "New progress bar"
 	],
 	"0.9": [
 	  "Fixed no data when installed",

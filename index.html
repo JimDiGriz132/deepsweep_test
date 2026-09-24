@@ -88,6 +88,11 @@ body {
   min-height: 50dvh;
   color: var(--text-color);
   transition: background 0.3s ease, color 0.3s ease;
+  overflow-x: hidden; /* spriječi horizontalni scrollbar kad popup (npr. riba blizu 100%) malo poviri izvan ruba */
+}
+
+html {
+  overflow-x: hidden;
 }
 
 /* WELCOME OVERLAY */
@@ -561,10 +566,14 @@ padding: 0 12px;
 
 /* Popup style */
 .fish-popup {
+  --popup-shift: 0px; /* JS podešava ovo da popup ne izlazi izvan ekrana */
   position: absolute;
   top: 40px; /* Pozicija ispod ribe */
   left: 50%;
-  transform: translateX(-50%) translateY(-10px);
+  /* X-pomak ide kroz 'translate' (odvojeno od 'transform') pa se NE animira -
+     time se izbjegava mjerenje pozicije usred tranzicije (uzrok "skakanja" popupa) */
+  translate: calc(-50% + var(--popup-shift)) 0;
+  transform: translateY(-10px);
   background: #ffd700; /* Žuta boja kao meta */
   color: #000;
   padding: 4px 12px;
@@ -574,7 +583,7 @@ padding: 0 12px;
   white-space: nowrap;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   opacity: 0;
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease; /* namjerno BEZ 'translate' u listi */
   pointer-events: none;
   z-index: 200;
 }
@@ -583,7 +592,7 @@ padding: 0 12px;
     content: '';
     position: absolute;
     bottom: 100%;
-    left: 50%;
+    left: calc(50% - var(--popup-shift)); /* strelica i dalje pokazuje točno na ribu */
     transform: translateX(-50%);
     border-width: 6px;
     border-style: solid;
@@ -593,11 +602,11 @@ padding: 0 12px;
 /* Hover (PC) & active class (Mobile) */
 .fish-wrapper:hover .fish-popup {
     opacity: 1 !important;
-    transform: translateX(-50%) translateY(0) !important;
+    transform: translateY(0) !important;
 }
 .fish-wrapper.active .fish-popup {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
 }
 
 /* ===== COUNTER ===== */
@@ -962,6 +971,26 @@ body {
   box-shadow: 0 0 5px var(--main-accent);
 }
 
+.tooltip-history-btn-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#tooltipHistoryBtn {
+  border: none;
+  background: none;
+  color: var(--main-accent);
+  font-size: 0.85em;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 4px 2px;
+}
+
+#tooltipHistoryBtn:hover { text-decoration: underline; }
+
 
 /* Logo */
 .app-logo {
@@ -1269,6 +1298,133 @@ html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
   flex: 0 0 auto;
   padding: 12px 0;
 }
+
+/* ===== VERSION HISTORY POPUP ===== */
+
+.history-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 25000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  box-sizing: border-box;
+  padding: max(12px, env(safe-area-inset-top)) 12px max(12px, env(safe-area-inset-bottom));
+}
+
+.history-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.history-content {
+  box-sizing: border-box;
+  width: min(480px, 92vw);
+  max-height: calc(100vh - 24px);
+  max-height: calc(100dvh - 24px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  background: var(--floor-bg);
+  border: 1px solid var(--main-accent);
+  border-radius: 14px;
+  padding: 20px;
+  color: var(--text-color);
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+}
+
+.history-content h2 {
+  flex: 0 0 auto;
+  margin: 0 0 12px;
+}
+
+.history-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-right: 4px;
+}
+
+.history-scroll .history-version {
+  margin-bottom: 16px;
+}
+
+.history-scroll .history-version strong {
+  color: var(--main-accent);
+  font-size: 1.05em;
+}
+
+.history-scroll ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.history-scroll li {
+  margin-bottom: 4px;
+  font-size: 0.92em;
+  line-height: 1.35;
+}
+
+.history-content #closeHistoryBtn {
+  flex: 0 0 auto;
+  margin-top: 14px;
+  padding: 12px 0;
+}
+
+/* ===== WIN / COLLECTION-COMPLETE ANIMATION ===== */
+.win-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 30000;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.win-overlay.show { opacity: 1; }
+
+.win-overlay .win-sprite {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  border-radius: 6px;
+  will-change: transform;
+  filter: drop-shadow(0 0 6px rgba(0,0,0,0.5));
+}
+
+.win-overlay .win-banner {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translate(-50%, -20px);
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  padding: 14px 28px;
+  border-radius: 16px;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+  max-width: 86vw;
+}
+
+.win-overlay .win-banner.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
 </style>
 </head>
 <body>
@@ -1380,6 +1536,20 @@ html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 </select>
 
 <ul id="container"></ul>
+
+<!-- VERSION HISTORY OVERLAY -->
+<div id="historyOverlay" class="history-overlay">
+  <div class="history-content">
+    <h2>Version History</h2>
+    <div class="history-scroll" id="historyScroll"></div>
+    <button id="closeHistoryBtn" class="menu-item-btn">Close</button>
+  </div>
+</div>
+
+<!-- WIN ANIMATION OVERLAY -->
+<div id="winOverlay" class="win-overlay">
+  <div class="win-banner" id="winBanner">The deep is fully swept!</div>
+</div>
 
 <script>
 // START OVERLAY
@@ -1581,7 +1751,9 @@ function loadState(){ return JSON.parse(localStorage.getItem('deepsweepState')||
 function saveState(state){ localStorage.setItem('deepsweepState', JSON.stringify(state)); }
 
 // --- Counter ---
-function updateCounter() {
+let deepsweepWasComplete = null; // null = još ne znamo (prije prvog stvarnog izračuna)
+
+function updateCounter(isInitialLoad) {
     // Tražimo sve checkboxove unutar elemenata s klasom 'item'
     const checkboxes = document.querySelectorAll('.item input[type="checkbox"]');
     const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
@@ -1608,16 +1780,179 @@ function updateCounter() {
 
     if (fill) fill.style.width = percentage + '%';
     if (fishWrapper) fishWrapper.style.left = percentage + '%';
+
+    adjustFishPopupPosition();
+
+    // 4. Win animacija — samo kad se PRIJELAZ dogodi (nije bilo 100%, sad jest)
+    const isComplete = total > 0 && checked === total;
+
+    if (isInitialLoad) {
+        // Samo postavi početno stanje, ne pokreći animaciju pri učitavanju stranice
+        deepsweepWasComplete = isComplete;
+    } else {
+        if (isComplete && deepsweepWasComplete === false) {
+            triggerWinAnimation();
+        }
+        deepsweepWasComplete = isComplete;
+    }
 }
 
+// Popup ribe: pazi da ne izlazi izvan ekrana (npr. kad je riba blizu 100% na desnom rubu)
+function adjustFishPopupPosition() {
+    const popup = document.getElementById('fishCounterPopup');
+    if (!popup) return;
+
+    popup.style.setProperty('--popup-shift', '0px');
+
+    const rect = popup.getBoundingClientRect();
+    const margin = 8;
+    let shift = 0;
+
+    // documentElement.clientWidth = stvarno vidljiva širina BEZ scrollbara
+    // (window.innerWidth zna uključivati scrollbar, pa je bio netočan kad su
+    // grupe/floorovi otvoreni i stranica dobije vertikalni scroll)
+    const viewportWidth = document.documentElement.clientWidth;
+
+    if (rect.right > viewportWidth - margin) {
+        shift = (viewportWidth - margin) - rect.right;
+    } else if (rect.left < margin) {
+        shift = margin - rect.left;
+    }
+
+    popup.style.setProperty('--popup-shift', shift + 'px');
+}
+
+window.addEventListener('resize', adjustFishPopupPosition);
+
 // VAŽNO: Pozovi funkciju jednom odmah pri učitavanju da ne stoji 0/0
-window.onload = updateCounter;
+window.onload = () => updateCounter(true);
+
+// ================= WIN ANIMATION (Solitaire-style bounce cascade) =================
+function triggerWinAnimation() {
+    const overlay = document.getElementById('winOverlay');
+    const banner = document.getElementById('winBanner');
+    if (!overlay) return;
+
+    const images = (window.allItemImages && window.allItemImages.length)
+        ? window.allItemImages
+        : ['logo.png'];
+
+    overlay.innerHTML = '';
+    overlay.appendChild(banner);
+    overlay.classList.add('show');
+
+    const SPRITE_SIZE = 46;
+    const TOTAL_SPRITES = 70;    // ukupno kartica tijekom cijele animacije
+    const SPAWN_INTERVAL = 80;   // ms između svake sljedeće kartice (kaskada)
+    const GRAVITY = 0.0021;      // px/ms^2
+    const BOUNCE_DAMPING = 0.58; // svaki odskok je ~58% visine prethodnog
+    const FADE_AFTER_SETTLE = 250; // ms koliko kratko ostane vidljiva nakon zadnjeg odskoka
+    const FADE_DURATION = 300;     // ms trajanje fade-outa
+
+    const floorY = window.innerHeight - SPRITE_SIZE - 10;
+    const sprites = [];
+    let spawnedCount = 0;
+    let spawnTimer = null;
+    let rafId = null;
+    let lastTime = null;
+
+    function spawnSprite() {
+        const img = document.createElement('img');
+        img.className = 'win-sprite';
+        img.src = images[spawnedCount % images.length];
+        overlay.appendChild(img);
+
+        const dir = Math.random() < 0.5 ? -1 : 1; // smjer kojim kartica na kraju izlazi s ekrana
+
+        sprites.push({
+            el: img,
+            x: Math.random() * (window.innerWidth - SPRITE_SIZE),
+            y: -SPRITE_SIZE - Math.random() * 260,
+            vx: dir * (0.12 + Math.random() * 0.22),
+            vy: 0,
+            rotation: Math.random() * 360,
+            vr: dir * (0.04 + Math.random() * 0.09),
+            bounces: 0,
+            maxBounces: 3 + Math.floor(Math.random() * 3),
+            settledAt: null // kad prestane odskakivati, počinje brojati do fade-outa
+        });
+
+        spawnedCount++;
+        if (spawnedCount < TOTAL_SPRITES) {
+            spawnTimer = setTimeout(spawnSprite, SPAWN_INTERVAL);
+        }
+    }
+
+    function tick(time) {
+        if (lastTime === null) lastTime = time;
+        const dt = Math.min(time - lastTime, 48); // clamp za slučaj laga (spriječi "teleportiranje")
+        lastTime = time;
+
+        for (let i = sprites.length - 1; i >= 0; i--) {
+            const s = sprites[i];
+            s.vy += GRAVITY * dt;
+            s.y += s.vy * dt;
+            s.x += s.vx * dt;
+            s.rotation += s.vr * dt;
+
+            if (s.y >= floorY && s.vy > 0) {
+                s.y = floorY;
+                if (s.bounces < s.maxBounces) {
+                    s.vy = -s.vy * BOUNCE_DAMPING;
+                    s.bounces++;
+                } else {
+                    s.vy = 0; // gotovo s odskakivanjem
+                    if (s.settledAt === null) s.settledAt = time; // počni brojati prema fade-outu
+                }
+            }
+
+            s.el.style.transform = `translate3d(${s.x}px, ${s.y}px, 0) rotate(${s.rotation}deg)`;
+
+            // Nakon što se "smiri" na dnu, brzo nestaje umjesto da dugo klizi do ruba ekrana
+            if (s.settledAt !== null) {
+                const elapsed = time - s.settledAt;
+                if (elapsed > FADE_AFTER_SETTLE) {
+                    const fadeProgress = Math.min((elapsed - FADE_AFTER_SETTLE) / FADE_DURATION, 1);
+                    s.el.style.opacity = 1 - fadeProgress;
+                    if (fadeProgress >= 1) {
+                        s.el.remove();
+                        sprites.splice(i, 1);
+                        continue;
+                    }
+                }
+            }
+
+            // ukloni čim izađe izvan zaslona (lijevo/desno ili predaleko dolje)
+            if (s.x < -SPRITE_SIZE * 2 || s.x > window.innerWidth + SPRITE_SIZE * 2 || s.y > window.innerHeight + SPRITE_SIZE * 3) {
+                s.el.remove();
+                sprites.splice(i, 1);
+            }
+        }
+
+        if (sprites.length > 0 || spawnedCount < TOTAL_SPRITES) {
+            rafId = requestAnimationFrame(tick);
+        } else {
+            overlay.classList.remove('show');
+            setTimeout(() => {
+                overlay.innerHTML = '';
+                overlay.appendChild(banner);
+                banner.classList.remove('show');
+            }, 450);
+        }
+    }
+
+    spawnSprite();
+    rafId = requestAnimationFrame(tick);
+    setTimeout(() => banner.classList.add('show'), 300);
+}
 
 // 2. Dodatak za mobitele: Klik na ribu pali prozorčić na 3 sekunde
 const fishContainer = document.getElementById('fishWrapper');
 if (fishContainer) {
+  fishContainer.addEventListener('mouseenter', adjustFishPopupPosition);
   fishContainer.addEventListener('click', function() {
     this.classList.add('active');
+    adjustFishPopupPosition();
     
     // Automatski sakrij nakon 3 sekunde
     clearTimeout(this.hideTimeout);
@@ -1630,12 +1965,13 @@ if (fishContainer) {
 // --- Load JSON and build UI ---
 let state = loadState();
 
-fetch('data.json')
+fetch('/data.json')
   .then(res => res.json())
   .then(data => {
+    window.allItemImages = [...new Set(data.map(i => i.img).filter(Boolean))];
     buildUI(data);
     syncGroupAndFloorCheckboxes();
-    updateCounter();
+    updateCounter(true); // true = initial load, don't trigger win animation
 
     // Manual order
     const desiredOrder = [
@@ -2053,7 +2389,7 @@ document.getElementById('openUncheckedBtn').addEventListener('click', runMissing
 document.getElementById('locationFilter').addEventListener('change', refreshMissingItemsFilter);
 
 // ================= VERSION BADGE TOOLTIP =================
-fetch('version.json')
+fetch('/version.json')
   .then(res => res.json())
   .then(v => {
     const badge = document.getElementById('appVersion');
@@ -2105,9 +2441,18 @@ fetch('version.json')
       tooltip.innerHTML = `
         <strong>What's new</strong>
         <ul>${changes.map(c => `<li>${c}</li>`).join('')}</ul>
+        <div class="tooltip-history-btn-wrap">
+          <button type="button" id="tooltipHistoryBtn">Full history →</button>
+        </div>
       `;
 
       document.body.appendChild(tooltip);
+
+      tooltip.querySelector('#tooltipHistoryBtn')?.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        closeTooltip();
+        document.getElementById('historyOverlay')?.classList.add('show');
+      });
 
       const rect = badge.getBoundingClientRect();
     tooltip.style.top = (rect.bottom + window.scrollY + 8) + 'px';
@@ -2149,8 +2494,34 @@ if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
         closeTooltip();
       }
     });
+
+    // ---- Popuni scrollable Version History popup sa svim verzijama ----
+    const historyScroll = document.getElementById('historyScroll');
+    if (historyScroll && v.changes) {
+      historyScroll.innerHTML = Object.entries(v.changes).map(([ver, list]) => `
+        <div class="history-version">
+          <strong>v${ver}${ver === currentVersion ? ' (current)' : ''}</strong>
+          <ul>${list.map(c => `<li>${c}</li>`).join('')}</ul>
+        </div>
+      `).join('');
+    }
   })
   .catch(err => console.error('Failed to load version.json', err));
+
+// ---- Version History popup: close handlers ----
+const historyOverlay = document.getElementById('historyOverlay');
+const closeHistoryBtn = document.getElementById('closeHistoryBtn');
+
+if (closeHistoryBtn && historyOverlay) {
+  closeHistoryBtn.addEventListener('click', () => {
+    historyOverlay.classList.remove('show');
+  });
+}
+if (historyOverlay) {
+  historyOverlay.addEventListener('click', (e) => {
+    if (e.target === historyOverlay) historyOverlay.classList.remove('show');
+  });
+}
 
 // --- SEARCH ---
 const itemSearch = document.getElementById('itemSearch');
